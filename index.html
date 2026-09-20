@@ -3,121 +3,290 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Portofolio Mia Nathania Sibuea</title>
+  <meta name="description" content="Portofolio dan Layanan Konsultasi Web Mia Nathania Sibuea - Institut Teknologi Del">
+  <title>Portofolio Mia Nathania Sibuea - 12S24005</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <!-- Header & Navigasi -->
-  <header>
-    <h1>Portofolio Mia Nathania Sibuea</h1>
-    <nav>
-      <ul>
-        <li><a href="#tentang">Tentang Saya</a></li>
-        <li><a href="#portofolio">Portofolio</a></li>
-        <li><a href="#layanan">Formulir Layanan</a></li>
-      </ul>
-    </nav>
+  <!-- 1. Header & Navigasi Utama -->
+  <header class="site-header">
+    <div class="header-container">
+      <div class="brand-identity">
+        <span class="brand-logo" aria-hidden="true">MNS</span>
+        <div class="brand-info">
+          <span class="brand-name">Mia Nathania Sibuea</span>
+          <span class="brand-role">S1 Sistem Informasi · IT Del</span>
+        </div>
+      </div>
+      <nav class="main-nav" aria-label="Navigasi Utama">
+        <ul>
+          <li><a href="#tentang">Tentang Saya</a></li>
+          <li><a href="#portofolio">Portofolio &amp; Proyek</a></li>
+          <li><a href="#layanan">Formulir Layanan</a></li>
+        </ul>
+      </nav>
+    </div>
   </header>
 
-  <main>
-    <!-- Section Tentang Saya -->
-    <section id="tentang">
-      <h2>Tentang Saya</h2>
-      <article>
-        <p>Halo, saya <strong>Mia Nathania Sibuea</strong>, mahasiswa S1 Sistem Informasi di Institut Teknologi Del. 
-        Saya memiliki ketertarikan besar pada pengembangan antarmuka web modern, desain responsif, dan aksesibilitas.</p>
-      </article>
+  <!-- 2. Konten Inti Halaman -->
+  <main class="page-container">
+    <!-- Section 1: Tentang Saya & Identitas Akademik -->
+    <section id="tentang" class="section-card">
+      <header class="section-header">
+        <h2 class="section-title">Tentang Saya</h2>
+        <p class="section-desc">Profil profesional dan identitas akademik mahasiswa</p>
+      </header>
+
+      <div class="about-layout">
+        <article class="profile-summary">
+          <h3>Profil Profesional</h3>
+          <p>
+            Halo! Saya <strong>Mia Nathania Sibuea</strong>, mahasiswa program studi S1 Sistem Informasi di Institut Teknologi Del (NIM: <strong>12S24005</strong>).
+          </p>
+          <p>
+            Saya berfokus pada bidang <em>UI/UX Design</em>, <em>Business Process Analysis</em>, serta perancangan antarmuka web modern. Saya memiliki komitmen kuat dalam menciptakan desain web yang berorientasi pada kepuasan pengguna, memenuhi standar aksesibilitas web (WCAG 2.2 Level AA), dan tersusun menggunakan tata letak semantik yang bersih.
+          </p>
+          <div class="profile-tags">
+            <span class="tag-pill">UI/UX Enthusiast</span>
+            <span class="tag-pill">Sistem Informasi</span>
+            <span class="tag-pill">Web Accessibility (A11y)</span>
+            <span class="tag-pill">Institut Teknologi Del</span>
+          </div>
+        </article>
+
+        <aside class="academic-sidebar" aria-label="Identitas Akademik">
+          <h3>Identitas Akademik</h3>
+          <div class="table-wrapper">
+            <table class="academic-table">
+              <caption>Data Akademik Mahasiswa</caption>
+              <thead>
+                <tr>
+                  <th scope="col">Atribut</th>
+                  <th scope="col">Keterangan</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row">Nama Mahasiswa</th>
+                  <td>Mia Nathania Sibuea</td>
+                </tr>
+                <tr>
+                  <th scope="row">NIM</th>
+                  <td>12S24005</td>
+                </tr>
+                <tr>
+                  <th scope="row">Program Studi</th>
+                  <td>S1 Sistem Informasi</td>
+                </tr>
+                <tr>
+                  <th scope="row">Fakultas</th>
+                  <td>Fakultas Informatika &amp; Teknik Elektro</td>
+                </tr>
+                <tr>
+                  <th scope="row">Institusi</th>
+                  <td>Institut Teknologi Del</td>
+                </tr>
+                <tr>
+                  <th scope="row">Mata Kuliah</th>
+                  <td>Pemrograman &amp; Pengujian Aplikasi Web</td>
+                </tr>
+                <tr>
+                  <th scope="row">Dosen Pengampu</th>
+                  <td>Chandro Pardede, S.Kom., M.Sc.</td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th scope="row">Status Mahasiswa</th>
+                  <td>Aktif Reguler (Semester Genap 2025/2026)</td>
+                </tr>
+              </tfoot>
+            </table>
+          </div>
+        </aside>
+      </div>
     </section>
 
-    <!-- Section Portofolio -->
-    <section id="portofolio">
-      <h2>Portofolio & Proyek</h2>
-      <table>
-        <caption>Rekapitulasi Proyek Akademik</caption>
-        <thead>
-          <tr>
-            <th scope="col">No</th>
-            <th scope="col">Proyek</th>
-            <th scope="col">Keterangan</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr><td scope="row">1</td><td>Sistem Izin Ruangan</td><td>Requirements Engineering · UML (Use Case, DFD, ERD)</td></tr>
-          <tr><td scope="row">2</td><td>Child Immunization Scheduling App</td><td>UI/UX Design · Figma · Usability Testing</td></tr>
-          <tr><td scope="row">3</td><td>OurMemoria - Digital Tourism Platform</td><td>Business Plan · Web-based Tourism Booking · Lake Toba</td></tr>
-          <tr><td scope="row">4</td><td>Business Process Analysis - Student Permission System</td><td>BPMN · As-Is/To-Be Modelling · Root-cause Analysis</td></tr>
-        </tbody>
-        <tfoot>
-          <tr><td colspan="3">Total Proyek: 4</td></tr>
-        </tfoot>
-      </table>
+    <!-- Section 2: Portofolio Karya, Tabel Capaian & Daftar Keahlian -->
+    <section id="portofolio" class="section-card">
+      <header class="section-header">
+        <h2 class="section-title">Portofolio &amp; Rekapitulasi Proyek</h2>
+        <p class="section-desc">Data riwayat proyek akademik, pemodelan sistem, dan peta kompetensi</p>
+      </header>
 
-      <h3>Keahlian Utama</h3>
-      <ul>
-        <li>Java, C, SQL</li>
-        <li>HTML5 & CSS3</li>
-        <li>UI/UX Design (Figma, Canva, draw.io)</li>
-        <li>Git & GitHub</li>
-      </ul>
+      <!-- Tabel Semantik Proyek -->
+      <div class="table-wrapper">
+        <table class="project-table">
+          <caption>Rekapitulasi Riwayat Proyek Akademik &amp; Desain</caption>
+          <thead>
+            <tr>
+              <th scope="col">No</th>
+              <th scope="col">Nama Proyek</th>
+              <th scope="col">Tahun</th>
+              <th scope="col">Ruang Lingkup &amp; Deliverable</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">1</th>
+              <td><strong>Sistem Izin Ruangan</strong></td>
+              <td>2025</td>
+              <td>Requirements Engineering · Analisis Kebutuhan Sistem · UML (Use Case, DFD, ERD)</td>
+            </tr>
+            <tr>
+              <th scope="row">2</th>
+              <td><strong>Child Immunization Scheduling App</strong></td>
+              <td>2025</td>
+              <td>UI/UX Design · Interactive Prototype Figma · Usability Testing &amp; Design System</td>
+            </tr>
+            <tr>
+              <th scope="row">3</th>
+              <td><strong>OurMemoria - Digital Tourism Platform</strong></td>
+              <td>2025</td>
+              <td>Business Plan · Web-based Tourism Booking · Destinasi Danau Toba</td>
+            </tr>
+            <tr>
+              <th scope="row">4</th>
+              <td><strong>Student Permission System Analysis</strong></td>
+              <td>2026</td>
+              <td>Business Process Analysis · Pemodelan BPMN (As-Is &amp; To-Be) · Root Cause Analysis</td>
+            </tr>
+          </tbody>
+          <tfoot>
+            <tr>
+              <th colspan="3" scope="row">Total Proyek Akademik Terselesaikan</th>
+              <td><strong>4 Proyek Terverifikasi</strong></td>
+            </tr>
+          </tfoot>
+        </table>
+      </div>
 
-      <h3>Langkah Belajar</h3>
-      <ol>
-        <li>Menerapkan struktur dokumen semantik</li>
-        <li>Membuat tabel & list untuk data</li>
-        <li>Mendesain formulir interaktif</li>
-        <li>Menerapkan CSS modern & responsif</li>
-        <li>Deploy ke GitHub Pages</li>
-      </ol>
+      <!-- Dua Jenis HTML Lists (Unordered & Ordered) -->
+      <div class="lists-grid">
+        <article class="list-card">
+          <h3>Keahlian Utama (Skills)</h3>
+          <p class="list-subtitle">Kompetensi teknis dan perangkat yang dikuasai:</p>
+          <ul class="styled-list skill-list">
+            <li><strong>Frontend Web:</strong> HTML5 Semantic, Modern CSS3, Flexbox, CSS Grid</li>
+            <li><strong>Bahasa Pemrograman:</strong> Java, C, Relational Database SQL</li>
+            <li><strong>UI/UX &amp; Pemodelan:</strong> Figma, Canva, draw.io (UML &amp; BPMN)</li>
+            <li><strong>Alat Pengembang:</strong> Git, GitHub, GitHub Pages, Visual Studio Code</li>
+          </ul>
+        </article>
+
+        <article class="list-card">
+          <h3>Langkah Belajar Praktikum Web</h3>
+          <p class="list-subtitle">Alur metodologis pengerjaan praktikum minggu 02:</p>
+          <ol class="styled-list step-list">
+            <li>Menyusun arsitektur dokumen HTML5 semantik murni tanpa <em>div-soup</em>.</li>
+            <li>Mengorganisasi data tabular semantik dengan <em>caption</em>, <em>thead</em>, <em>tbody</em>, dan <em>tfoot</em>.</li>
+            <li>Membangun formulir interaktif yang memenuhi standar aksesibilitas WCAG 2.2.</li>
+            <li>Menerapkan prinsip estetika CSS modern (aturan 60-30-10, <em>soft shadow</em>, &amp; <em>border radius</em>).</li>
+            <li>Melakukan versioning terstruktur menggunakan Git dan <em>deployment live</em> di GitHub Pages.</li>
+          </ol>
+        </article>
+      </div>
     </section>
 
-    <!-- Section Formulir Layanan -->
-    <section id="layanan">
-      <h2>Formulir Layanan Konsultasi</h2>
-      <form action="/api/submit" method="POST">
-        <fieldset>
-          <legend>Data Identitas</legend>
-          <label for="nama">Nama Lengkap:</label>
-          <input type="text" id="nama" name="nama" required>
+    <!-- Section 3: Formulir Pemesanan Layanan / Kontak -->
+    <section id="layanan" class="section-card">
+      <header class="section-header">
+        <h2 class="section-title">Formulir Pemesanan Layanan &amp; Konsultasi</h2>
+        <p class="section-desc">Silakan lengkapi formulir terstruktur di bawah ini untuk memulai sesi konsultasi</p>
+      </header>
 
-          <label for="email">Email Kampus (@del.ac.id):</label>
-          <input type="email" id="email" name="email" required>
+      <form class="consultation-form" action="/api/submit" method="POST">
+        <!-- Fieldset 1: Data Identitas Pengirim -->
+        <fieldset class="form-fieldset">
+          <legend class="form-legend">Data Identitas Pemohon</legend>
 
-          <label for="telp">Nomor Telepon:</label>
-          <input type="tel" id="telp" name="telp" required>
+          <div class="form-group">
+            <label for="nama" class="form-label">Nama Lengkap <span class="required-indicator" aria-hidden="true">*</span></label>
+            <input type="text" id="nama" name="nama" class="form-control" required placeholder="Contoh: Mia Nathania Sibuea" autocomplete="name">
+          </div>
+
+          <div class="form-group">
+            <label for="email" class="form-label">Email Kampus (@del.ac.id) <span class="required-indicator" aria-hidden="true">*</span></label>
+            <input type="email" id="email" name="email" class="form-control" required placeholder="nama@del.ac.id" autocomplete="email" aria-describedby="email-help">
+            <small id="email-help" class="form-help">Gunakan alamat email resmi civitas Del (@del.ac.id) untuk keperluan verifikasi identitas.</small>
+          </div>
+
+          <div class="form-group">
+            <label for="telp" class="form-label">Nomor Telepon / WhatsApp <span class="required-indicator" aria-hidden="true">*</span></label>
+            <input type="tel" id="telp" name="telp" class="form-control" required placeholder="Contoh: 081234567890" pattern="[0-9]{10,14}" autocomplete="tel">
+          </div>
         </fieldset>
 
-        <fieldset>
-          <legend>Detail Permintaan</legend>
-          <label for="kategori">Topik Peminatan:</label>
-          <select id="kategori" name="kategori">
-            <option value="frontend">Frontend Engineering & UI/UX</option>
-            <option value="backend">Backend & Cloud Architecture</option>
-            <option value="testing">Web Quality Assurance & Testing</option>
-          </select>
+        <!-- Fieldset 2: Detail Kebutuhan Layanan -->
+        <fieldset class="form-fieldset">
+          <legend class="form-legend">Detail Permintaan Konsultasi</legend>
 
-          <label>Jenis Layanan:</label>
-          <input type="radio" id="konsultasi" name="jenis" value="konsultasi"> Konsultasi
-          <input type="radio" id="proyek" name="jenis" value="proyek"> Proyek
+          <div class="form-group">
+            <label for="kategori" class="form-label">Topik Peminatan Matakuliah <span class="required-indicator" aria-hidden="true">*</span></label>
+            <select id="kategori" name="kategori" class="form-control" required>
+              <option value="" disabled selected>-- Pilih Topik Peminatan --</option>
+              <option value="frontend">Frontend Engineering &amp; UI/UX</option>
+              <option value="backend">Backend &amp; Cloud Architecture</option>
+              <option value="testing">Web Quality Assurance &amp; Testing</option>
+            </select>
+          </div>
 
-          <label for="pesan">Deskripsi Pertanyaan:</label>
-          <textarea id="pesan" name="pesan" rows="4" required></textarea>
+          <!-- Input Kontrol Angka (Number) Sesuai Modul -->
+          <div class="form-group">
+            <label for="durasi" class="form-label">Estimasi Durasi Konsultasi (Jam) <span class="required-indicator" aria-hidden="true">*</span></label>
+            <input type="number" id="durasi" name="durasi" class="form-control" min="1" max="8" value="1" required placeholder="1 hingga 8 jam">
+          </div>
 
-          <label><input type="checkbox" name="persetujuan" required> Saya menyetujui syarat & ketentuan</label>
+          <!-- Pilihan Jenis Layanan (Radio Buttons dengan Label Eksplisit) -->
+          <div class="form-group">
+            <span class="form-label-title">Pilihan Jenis Layanan <span class="required-indicator" aria-hidden="true">*</span></span>
+            <div class="options-container radio-options">
+              <div class="choice-item">
+                <input type="radio" id="layanan-konsultasi" name="jenis_layanan" value="konsultasi" required checked>
+                <label for="layanan-konsultasi">Konsultasi Desain &amp; Evaluasi Kode</label>
+              </div>
+              <div class="choice-item">
+                <input type="radio" id="layanan-proyek" name="jenis_layanan" value="proyek" required>
+                <label for="layanan-proyek">Kolaborasi Proyek Aplikasi</label>
+              </div>
+            </div>
+          </div>
+
+          <!-- Input Textarea Deskripsi Permintaan -->
+          <div class="form-group">
+            <label for="pesan" class="form-label">Deskripsi Kebutuhan / Pertanyaan <span class="required-indicator" aria-hidden="true">*</span></label>
+            <textarea id="pesan" name="pesan" class="form-control text-area" rows="4" required placeholder="Jelaskan kebutuhan, latar belakang proyek, atau pertanyaan yang ingin didiskusikan secara detail..."></textarea>
+          </div>
+
+          <!-- Checkbox Persetujuan dengan Label Eksplisit -->
+          <div class="form-group">
+            <div class="choice-item checkbox-item">
+              <input type="checkbox" id="persetujuan" name="persetujuan" required>
+              <label for="persetujuan">
+                Saya menyatakan bahwa data yang diisi adalah benar dan menyetujui ketentuan sesi konsultasi. <span class="required-indicator" aria-hidden="true">*</span>
+              </label>
+            </div>
+          </div>
         </fieldset>
 
-        <button type="submit">Kirim Permintaan</button>
+        <button type="submit" class="btn-submit">Kirim Permintaan Konsultasi</button>
       </form>
     </section>
   </main>
 
-  <!-- Footer -->
-  <footer>
-    <p>&copy; 2026 Mia Nathania Sibuea - Institut Teknologi Del</p>
-    <nav>
-      <a href="#tentang">Tentang</a> |
-      <a href="#portofolio">Portofolio</a> |
-      <a href="#layanan">Layanan</a>
-    </nav>
+  <!-- 3. Footer Penutup Dokumen -->
+  <footer class="site-footer">
+    <div class="footer-container">
+      <p class="copyright">&copy; 2026 Mia Nathania Sibuea (NIM: 12S24005) · Institut Teknologi Del</p>
+      <p class="footer-subtext">Praktikum Minggu 02: Pemrograman dan Pengujian Aplikasi Web (12S3101)</p>
+      <nav class="footer-nav" aria-label="Navigasi Footer">
+        <a href="#tentang">Tentang Saya</a>
+        <span class="nav-separator" aria-hidden="true">·</span>
+        <a href="#portofolio">Portofolio</a>
+        <span class="nav-separator" aria-hidden="true">·</span>
+        <a href="#layanan">Formulir Layanan</a>
+      </nav>
+    </div>
   </footer>
 </body>
 </html>
