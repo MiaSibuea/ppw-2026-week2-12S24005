@@ -1,0 +1,44 @@
+[
+  {
+    "id": "srv-1",
+    "name": "Audit Aksesibilitas & UI/UX Review",
+    "category": "frontend",
+    "price": "Rp 150.000 / sesi",
+    "duration": "1 - 2 Jam",
+    "description": "Evaluasi komprehensif antarmuka web terhadap standar WCAG 2.2 AA, heuristik Nielsen, dan konsistensi design system.",
+    "features": [
+      "Review kontras warna dan tipografi",
+      "Pemeriksaan navigasi keyboard & screen reader",
+      "Laporan temuan & rekomendasi perbaikan (PDF)"
+    ],
+    "isPopular": true
+  },
+  {
+    "id": "srv-2",
+    "name": "Pemodelan Proses Bisnis & UML",
+    "category": "backend",
+    "price": "Rp 250.000 / modul",
+    "duration": "2 - 4 Jam",
+    "description": "Penyusunan diagram proses bisnis (BPMN 2.0) serta diagram UML (Use Case, Activity, Sequence, ERD) untuk perancangan sistem informasi.",
+    "features": [
+      "Diagram BPMN alur As-Is dan To-Be",
+      "Use Case Specification lengkap",
+      "File mentah editable (.drawio / XML)"
+    ],
+    "isPopular": false
+  },
+  {
+    "id": "srv-3",
+    "name": "Konsultasi Refactoring Frontend Web",
+    "category": "testing",
+    "price": "Rp 200.000 / sesi",
+    "duration": "2 Jam",
+    "description": "Bimbingan refactoring arsitektur CSS/JS, modernisasi layout Bootstrap 5, dan penerapan Client-Side Rendering asinkron.",
+    "features": [
+      "Pembersihan inline styles & optimasi CSS variables",
+      "Integrasi Fetch API & async/await",
+      "Profiling performa DevTools (Cold vs Warm load)"
+    ],
+    "isPopular": false
+  }
+]

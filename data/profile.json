@@ -1,0 +1,37 @@
+{
+  "name": "Mia Nathania Sibuea",
+  "nim": "12S24005",
+  "programStudy": "S1 Sistem Informasi",
+  "faculty": "Fakultas Informatika dan Teknik Elektro (FITE)",
+  "institution": "Institut Teknologi Del",
+  "academicStatus": "Aktif Reguler (Semester Genap 2025/2026)",
+  "lecturer": "Chandro Pardede, S.Kom., M.Sc.",
+  "course": "Pemrograman dan Pengujian Web (12S3101)",
+  "headline": "Merancang Pengalaman Digital yang Intuitif & Aksesibel",
+  "bio": "Mahasiswa S1 Sistem Informasi di Institut Teknologi Del yang berfokus pada UI/UX Design, Business Process Analysis, dan pengembangan antarmuka web modern berstandar WCAG 2.2 Level AA.",
+  "avatar": "assets/profile.png",
+  "stats": [
+    {
+      "value": "4+",
+      "label": "Proyek Selesai",
+      "icon": "bi-folder-check"
+    },
+    {
+      "value": "UI/UX",
+      "label": "Fokus Utama",
+      "icon": "bi-palette"
+    },
+    {
+      "value": "AA",
+      "label": "Standar WCAG 2.2",
+      "icon": "bi-universal-access"
+    }
+  ],
+  "skills": [
+    "Frontend Web (HTML5, Modern CSS3, Bootstrap 5)",
+    "UI/UX Design (Figma, FigJam, Maze)",
+    "Business Process Modeling (BPMN 2.0, UML, draw.io)",
+    "Pemrograman (Java, C, Relational Database SQL)",
+    "Developer Tools (Git, GitHub, GitHub Pages, VS Code)"
+  ]
+}

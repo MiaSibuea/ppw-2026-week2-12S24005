@@ -1,0 +1,74 @@
+[
+  {
+    "id": "proj-1",
+    "title": "Sistem Izin Ruangan",
+    "category": "Requirements Engineering",
+    "year": "2025",
+    "badgeColor": "primary",
+    "icon": "bi-door-open",
+    "summary": "Analisis kebutuhan sistem, pemodelan proses bisnis, dan perancangan diagram UML untuk otomasi perizinan ruangan kampus.",
+    "description": "Proyek ini berfokus pada perancangan kebutuhan sistem informasi peminjaman dan perizinan ruangan kampus di Institut Teknologi Del agar proses birokrasi menjadi paperless, transparan, dan terstruktur.",
+    "metrics": "Efisiensi alur birokrasi perizinan meningkat 60%",
+    "tags": ["UML", "SRS", "Process Analysis", "System Design"],
+    "deliverables": [
+      "Dokumen SRS (Software Requirements Specification)",
+      "Diagram UML: Use Case, Activity, Sequence, dan ERD",
+      "Kamus Data dan Matriks Ketertelusuran Kebutuhan"
+    ],
+    "link": "https://github.com/MiaSibuea"
+  },
+  {
+    "id": "proj-2",
+    "title": "Child Immunization App",
+    "category": "UI/UX Design",
+    "year": "2025",
+    "badgeColor": "success",
+    "icon": "bi-heart-pulse",
+    "summary": "Perancangan purwarupa interaktif berbasis Figma dengan fokus pada aksesibilitas orang tua dalam memantau jadwal imunisasi anak.",
+    "description": "Aplikasi mobile ramah pengguna untuk membantu posyandu dan orang tua mencatat serta mengingat jadwal vaksinasi dan imunisasi balita secara terintegrasi dan tepat waktu.",
+    "metrics": "Skor SUS (System Usability Scale) 85.5 (Kategori A)",
+    "tags": ["Figma", "UI/UX", "Prototyping", "WCAG 2.2 AA"],
+    "deliverables": [
+      "Interactive High-Fidelity Prototype (Figma)",
+      "Design System & Color Contrast Compliance WCAG 2.2 AA",
+      "Laporan Usability Testing dengan Maze"
+    ],
+    "link": "https://github.com/MiaSibuea"
+  },
+  {
+    "id": "proj-3",
+    "title": "OurMemoria - Tourism Platform",
+    "category": "Business Plan",
+    "year": "2025",
+    "badgeColor": "warning",
+    "icon": "bi-geo-alt",
+    "summary": "Platform digital pemesanan tiket wisata & suvenir lokal kawasan Danau Toba yang dirancang untuk memberdayakan UMKM pariwisata.",
+    "description": "Perancangan platform digital promosi dan reservasi destinasi pariwisata lokal kawasan Danau Toba dengan fitur paket wisata tematik dan produk cinderamata UMKM binaan lokal.",
+    "metrics": "Model monetisasi tervalidasi pada 3 desa wisata",
+    "tags": ["Business Plan", "Tourism Platform", "E-Commerce", "Danau Toba"],
+    "deliverables": [
+      "Business Model Canvas (BMC) & Value Proposition",
+      "Wireframe Alur Pembayaran & Katalog Suvenir",
+      "Proyeksi Finansial 3 Tahun Operasional"
+    ],
+    "link": "https://github.com/MiaSibuea"
+  },
+  {
+    "id": "proj-4",
+    "title": "Student Permission Analysis",
+    "category": "Process Analysis",
+    "year": "2026",
+    "badgeColor": "info",
+    "icon": "bi-diagram-3",
+    "summary": "Analisis proses bisnis pengajuan izin mahasiswa melalui pemodelan alur BPMN serta identifikasi bottleneck sistem.",
+    "description": "Evaluasi mendalam mengenai alur perizinan cuti/keluar asrama mahasiswa dengan analisis efisiensi waktu siklus menggunakan standar notasi BPMN 2.0 (As-Is dan To-Be).",
+    "metrics": "Reduksi cycle time persetujuan asrama sebesar 45%",
+    "tags": ["BPMN 2.0", "Bottleneck Analysis", "As-Is / To-Be", "SOP Kampus"],
+    "deliverables": [
+      "Diagram Alur BPMN 2.0 (Kondisi As-Is vs To-Be)",
+      "Matriks Analisis Akar Masalah (Fishbone / 5-Whys)",
+      "Rekomendasi Kebijakan dan SOP Terintegrasi"
+    ],
+    "link": "https://github.com/MiaSibuea"
+  }
+]
