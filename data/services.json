@@ -1,44 +1,47 @@
 [
   {
     "id": "srv-1",
-    "name": "Audit Aksesibilitas & UI/UX Review",
-    "category": "frontend",
-    "price": "Rp 150.000 / sesi",
-    "duration": "1 - 2 Jam",
-    "description": "Evaluasi komprehensif antarmuka web terhadap standar WCAG 2.2 AA, heuristik Nielsen, dan konsistensi design system.",
+    "title": "UI/UX & Accessibility Audit",
+    "icon": "bi-universal-access",
+    "price": "Rp 250.000",
+    "unit": "per modul aplikasi",
+    "badge": "Terpopuler",
+    "description": "Evaluasi antarmuka berdasarkan standar WCAG 2.2 AA, heuristik Nielsen, dan optimalisasi navigasi pengguna.",
     "features": [
-      "Review kontras warna dan tipografi",
-      "Pemeriksaan navigasi keyboard & screen reader",
-      "Laporan temuan & rekomendasi perbaikan (PDF)"
-    ],
-    "isPopular": true
+      "Audit Kontras Warna & Navigasi Keyboard",
+      "Heuristic Evaluation Report (10 Prinsip)",
+      "Rekomendasi Wireframe Perbaikan UI",
+      "Sesi Konsultasi Online 1 Jam"
+    ]
   },
   {
     "id": "srv-2",
-    "name": "Pemodelan Proses Bisnis & UML",
-    "category": "backend",
-    "price": "Rp 250.000 / modul",
-    "duration": "2 - 4 Jam",
-    "description": "Penyusunan diagram proses bisnis (BPMN 2.0) serta diagram UML (Use Case, Activity, Sequence, ERD) untuk perancangan sistem informasi.",
+    "title": "Pemodelan Proses Bisnis & UML",
+    "icon": "bi-diagram-3-fill",
+    "price": "Rp 350.000",
+    "unit": "per kebutuhan sistem",
+    "badge": "Rekomendasi",
+    "description": "Perancangan spesifikasi sistem komprehensif mulai dari pemodelan alur bisnis BPMN hingga perancangan UML terintegrasi.",
     "features": [
-      "Diagram BPMN alur As-Is dan To-Be",
-      "Use Case Specification lengkap",
-      "File mentah editable (.drawio / XML)"
-    ],
-    "isPopular": false
+      "Pemodelan BPMN 2.0 (As-Is & To-Be)",
+      "Diagram Use Case, Activity, & Sequence",
+      "Perancangan ERD & Kamus Data Relasional",
+      "Dokumentasi Spesifikasi Kebutuhan Ringkas"
+    ]
   },
   {
     "id": "srv-3",
-    "name": "Konsultasi Refactoring Frontend Web",
-    "category": "testing",
-    "price": "Rp 200.000 / sesi",
-    "duration": "2 Jam",
-    "description": "Bimbingan refactoring arsitektur CSS/JS, modernisasi layout Bootstrap 5, dan penerapan Client-Side Rendering asinkron.",
+    "title": "Frontend Prototyping & Code Review",
+    "icon": "bi-code-slash",
+    "price": "Rp 500.000",
+    "unit": "per proyek",
+    "badge": "Komprehensif",
+    "description": "Pembuatan prototipe antarmuka web responsif berbasis Bootstrap 5 / Modern CSS dan evaluasi struktur kode semantik.",
     "features": [
-      "Pembersihan inline styles & optimasi CSS variables",
-      "Integrasi Fetch API & async/await",
-      "Profiling performa DevTools (Cold vs Warm load)"
-    ],
-    "isPopular": false
+      "Implementasi Desain ke HTML5/CSS3/Bootstrap 5",
+      "Audit Keamanan Sisi Klien (DOM XSS Defense)",
+      "Pengecekan Responsivitas Mobile & Tablet",
+      "Kode Sumber Bersih & Terstruktur di GitHub"
+    ]
   }
 ]

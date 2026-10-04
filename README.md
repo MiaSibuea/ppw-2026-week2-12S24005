@@ -1,6 +1,6 @@
-# Tugas Praktikum Minggu 03: Modernisasi & Refactoring Web Portfolio
+# Tugas Praktikum Minggu 04: Decoupled Multi-Tier Architecture & Dynamic Client-Side Rendering (CSR)
 
-Proyek ini merupakan hasil refactoring dan modernisasi dari tugas Minggu 02 mata kuliah **Pemrograman dan Pengujian Web (12S3101)** di **Institut Teknologi Del**. Pada praktikum minggu ini, situs web dirombak menggunakan ekosistem **Bootstrap 5.3+**, ikon **Bootstrap Icons**, dan teknik **Custom CSS Overrides & Variables** bertema personal elegan (*Soft Pink Aesthetic*).
+Repositori ini merupakan implementasi dan transformasi arsitektur web dari tugas Minggu 03 pada mata kuliah **Pemrograman dan Pengujian Web (12S3101)** di **Institut Teknologi Del**. Pada praktikum Minggu 04 ini, antarmuka portofolio dirombak dari struktur monolitik statis menjadi **Decoupled Multi-Tier Architecture** berbasis **Dynamic Client-Side Rendering (CSR)**, didukung mock RESTful data layer (`/data/*.json`), universal dynamic modal, serta evaluasi profil kinerja jaringan HTTP (RFC 9111).
 
 ---
 
@@ -11,42 +11,45 @@ Proyek ini merupakan hasil refactoring dan modernisasi dari tugas Minggu 02 mata
 * **Fakultas:** Fakultas Informatika dan Teknik Elektro (FITE)
 * **Institusi:** Institut Teknologi Del
 * **Dosen Pengampu:** Chandro Pardede, S.Kom., M.Sc.
-* **Tautan Live Demo:** [Kunjungi Web Portofolio di GitHub Pages](https://miasibuea.github.io/ppw-2026-week2-12S24005/) *(sesuaikan dengan username GitHub Anda)*
+* **Tautan Live Demo:** [https://miasibuea.github.io/ppw-2026-week2-12S24005/](https://miasibuea.github.io/ppw-2026-week2-12S24005/)
 
 ---
 
-## 📊 Tabel Komparasi: Sebelum vs Sesudah Integrasi Framework
+## 🏛️ 1. Pemodelan Arsitektur Web: Diagram C4 Container Model
 
-| Area Evaluasi | Minggu 02 (Sebelum Refactoring) | Minggu 03 (Sesudah Integrasi Bootstrap 5) |
-| :--- | :--- | :--- |
-| **Arsitektur CSS** | CSS murni dasar, tanpa arsitektur CSS Variables. | Menerapkan $\ge$ 10 **CSS Custom Properties (`:root`)** untuk manajemen warna, tema personal *Soft Pink*, border radius, dan bayangan dinamis. |
-| **Hierarki & Spesifisitas** | Penataan gaya sederhana. | Bersih dan elegan dengan **Zero `!important`**, mematuhi hierarki cascading alami dan spesifisitas selektor. |
-| **Navigasi (Navbar)** | Navigasi statis berbasis CSS murni. | **Responsive Sticky-Top Navbar** lengkap dengan logo identitas *brand* dan tombol *hamburger toggle collapse* yang berfungsi mulus di layar ponsel. |
-| **Hero Section** | Belum tersedia (langsung masuk ke profil). | **Hero Section Responsif Multi-Kolom** dengan headline, tombol *Call-to-Action* (CTA), dan kartu statistik portofolio (*metric cards*). |
-| **Penyajian Portofolio** | Data proyek disajikan dalam bentuk tabel biasa. | **Grid Responsif 12-Kolom** (`row-cols-1 row-cols-md-2 row-cols-lg-3 g-4`) dengan 4 kartu interaktif (`.card`) dan ornamen garis animasi `::before`. |
-| **Interaktivitas Detail** | Tidak ada jendela pop-up. | Terintegrasi dengan **Bootstrap Modal Dialog (`.modal`)** pada setiap kartu untuk menampilkan rincian deliverables dan lingkup proyek. |
-| **Formulir Layanan** | Formulir HTML dasar dengan input standar. | **Modern Form** menggunakan komponen **Floating Labels (`.form-floating`)**, **Input Groups berikon**, pilihan radio, select topik, checkbox ketentuan, dan **validasi visual (`.was-validated`)**. |
-| **Responsivitas Perangkat** | Mengandalkan media query manual dasar. | Menggunakan sistem **Bootstrap Grid 12-kolom** yang adaptif di berbagai resolusi layar (*mobile*, *tablet*, *desktop*) tanpa *horizontal overflow*. |
+Arsitektur aplikasi web kontemporer ini memisahkan tanggung jawab sistem ke dalam lapisan terisolasi (*Separation of Concerns*):
 
----
+```mermaid
+graph TD
+    User["Pengguna / Browser Client"]
 
-## 🛠️ Prasyarat & Teknologi yang Digunakan
-1. **HTML5 Semantik:** `<header>`, `<nav>`, `<main>`, `<section>`, `<article>`, `<aside>`, `<footer>`.
-2. **Bootstrap 5.3.3 CDN:** Grid system, Flexbox, Components (Navbar, Card, Modal, Form Floating).
-3. **Bootstrap Icons 1.11.3 CDN:** Ikonografi visual pada tombol, form, dan kartu metrik.
-4. **Advanced Custom CSS:** Variabel `:root`, pseudo-elements `::before`, transisi mikro-interaksi `transform: translateY()`.
-5. **Git & GitHub Pages:** Version control terstruktur pada branch `week3-bootstrap` dan web hosting publik.
+    subgraph Presentation_Tier ["Presentation Tier (Client Side)"]
+        UI["DOM Shell (HTML5 + Bootstrap 5.3)"]
+        AppJS["Presentation Controller (js/app.js)"]
+        LocalStorage["Client Storage (localStorage / State Persistence)"]
+    end
 
----
+    subgraph Service_Logic_Tier ["Application / Data Access Tier"]
+        ApiService["Data Access Layer (js/api-service.js)"]
+        MockAPI["Mock RESTful POST Dispatcher"]
+    end
 
-## 📸 Tangkapan Layar (Screenshots)
+    subgraph Data_Storage_Tier ["Data Layer (Decoupled JSON Providers)"]
+        ProjectsJSON["data/projects.json (Koleksi Portofolio)"]
+        ServicesJSON["data/services.json (Katalog Layanan)"]
+        ProfileJSON["data/profile.json (Data Pengembang)"]
+    end
 
-### 1. Tampilan Desktop (Navbar & Hero Section)
-*(Simpan screenshot tampilan web Anda ke folder `assets/` dengan nama `desktop-hero.png`)*
-![Tampilan Desktop](assets/screenshot-1.png)
+    subgraph Edge_Infrastructure ["Static Hosting & Delivery"]
+        CDN["GitHub Pages CDN Edge (HTTP Caching RFC 9111)"]
+    end
 
-### 2. Tampilan Kartu Portofolio & Modal Dialog
-![Kartu Portofolio](assets/screenshot-2.png)
-
-### 3. Tampilan Formulir Layanan Berstandar Bootstrap
-![Formulir Layanan](assets/screenshot-3.png)
+    User -->|Interaksi Pengguna| UI
+    UI -->|Event Trigger| AppJS
+    AppJS -->|Ambil Data Asinkron| ApiService
+    AppJS <-->|Simpan & Muat Riwayat Order| LocalStorage
+    ApiService -->|HTTP GET Fetch| ProjectsJSON
+    ApiService -->|HTTP GET Fetch| ServicesJSON
+    ApiService -->|HTTP GET Fetch| ProfileJSON
+    ApiService -->|HTTP POST AJAX Payload| MockAPI
+    CDN -.->|Sajikan Aset Statis 304 Not Modified| UI

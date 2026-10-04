@@ -1,79 +1,85 @@
 /**
- * api-service.js
- * Data Access Layer (DAL)
- * Bertanggung jawab melakukan pemanggilan HTTP Asinkron (Fetch API)
- * serta menangani error handling secara defensif.
+ * api-service.js - Data Access Layer (Decoupled Multi-Tier Architecture)
+ * Mengelola pemanggilan data eksternal via Fetch API dengan defensive error handling.
  */
-
-const ApiService = {
-  // 1. Mengambil data profil pengembang
-  async getProfile() {
+class ApiService {
+  /**
+   * Fetch data profil pengembang dari JSON provider
+   */
+  static async fetchProfile() {
     try {
       const response = await fetch('./data/profile.json');
       if (!response.ok) {
-        throw new Error(`Gagal memuat profil: HTTP ${response.status} (${response.statusText})`);
+        throw new Error(`[HTTP ${response.status}] Gagal memuat data profile: ${response.statusText}`);
       }
-      const data = await response.json();
-      return data;
+      return await response.json();
     } catch (error) {
-      console.error('[ApiService.getProfile Error]:', error);
+      console.error('[ApiService Profile Error]:', error);
       throw error;
     }
-  },
+  }
 
-  // 2. Mengambil koleksi data proyek portofolio
-  async getProjects() {
+  /**
+   * Fetch data koleksi portofolio proyek
+   */
+  static async fetchProjects() {
     try {
       const response = await fetch('./data/projects.json');
       if (!response.ok) {
-        throw new Error(`Gagal memuat proyek: HTTP ${response.status} (${response.statusText})`);
+        throw new Error(`[HTTP ${response.status}] Gagal memuat data projects: ${response.statusText}`);
       }
-      const data = await response.json();
-      return data;
+      return await response.json();
     } catch (error) {
-      console.error('[ApiService.getProjects Error]:', error);
+      console.error('[ApiService Projects Error]:', error);
       throw error;
     }
-  },
+  }
 
-  // 3. Mengambil data paket layanan konsultasi
-  async getServices() {
+  /**
+   * Fetch data katalog paket layanan
+   */
+  static async fetchServices() {
     try {
       const response = await fetch('./data/services.json');
       if (!response.ok) {
-        throw new Error(`Gagal memuat katalog layanan: HTTP ${response.status} (${response.statusText})`);
+        throw new Error(`[HTTP ${response.status}] Gagal memuat data services: ${response.statusText}`);
       }
-      const data = await response.json();
-      return data;
+      return await response.json();
     } catch (error) {
-      console.error('[ApiService.getServices Error]:', error);
+      console.error('[ApiService Services Error]:', error);
       throw error;
     }
-  },
-
-  // 4. Simulasi Pengiriman Form Pemesanan (Decoupled REST POST Dispatching)
-  // Mensimulasikan network latency 800ms layaknya mengirim ke API Server sungguhan
-  async submitServiceOrder(payload) {
-    return new Promise((resolve, reject) => {
-      setTimeout(() => {
-        // Validasi payload sederhana di sisi klien
-        if (!payload || !payload.nama || !payload.email) {
-          reject(new Error('Data formulir tidak lengkap!'));
-          return;
-        }
-
-        // Response DTO (Data Transfer Object) tiruan server
-        const mockResponse = {
-          success: true,
-          statusCode: 201,
-          message: 'Permintaan pemesanan layanan berhasil dicatat oleh server.',
-          orderId: 'ORD-' + Date.now(),
-          timestamp: new Date().toISOString(),
-          data: payload
-        };
-
-        resolve(mockResponse);
-      }, 800); // Penundaan 800ms untuk efek loading realistis
-    });
   }
-};
+
+  /**
+   * Simulasi RESTful Asynchronous Form Dispatch (AJAX POST)
+   * Mengirim payload JSON DTO dengan latensi simulasi network (600ms)
+   */
+  static async submitServiceOrder(payload) {
+    try {
+      // Mensimulasikan network delay HTTP POST ke mock endpoint
+      await new Promise(resolve => setTimeout(resolve, 600));
+
+      // Jika ada endpoint nyata, contoh:
+      // const response = await fetch('/api/orders', {
+      //   method: 'POST',
+      //   headers: { 'Content-Type': 'application/json' },
+      //   body: JSON.stringify(payload)
+      // });
+      // return await response.json();
+
+      return {
+        status: 201,
+        success: true,
+        message: 'Permintaan konsultasi layanan berhasil diterima oleh API Server.',
+        orderId: 'ORD-' + Date.now(),
+        data: payload
+      };
+    } catch (error) {
+      console.error('[ApiService Submit Order Error]:', error);
+      throw error;
+    }
+  }
+}
+
+window.ApiService = ApiService;

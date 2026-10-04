@@ -3,19 +3,19 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Portofolio dan Layanan Konsultasi Web Mia Nathania Sibuea - Decoupled CSR Architecture">
-  <title>Portofolio Mia Nathania Sibuea - 12S24005</title>
+  <meta name="description" content="Portofolio Decoupled CSR & Layanan Konsultasi Web - Mia Nathania Sibuea - Institut Teknologi Del">
+  <title>Portofolio & Layanan Web - Mia Nathania Sibuea (12S24005)</title>
 
-  <!-- 1. Bootstrap 5.3.3 CSS CDN -->
+  <!-- 1. Bootstrap 5.3.3 CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-  <!-- 2. Bootstrap Icons CDN -->
+  <!-- 2. Bootstrap Icons -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
-  <!-- 3. Custom CSS Overrides -->
+
+  <!-- 3. CSS Kustom Terstandarisasi Week 4 -->
   <link rel="stylesheet" href="css/custom-style.css">
 </head>
 <body>
-
-  <!-- ================= 1. HEADER & NAVBAR ================= -->
+  <!-- 1. Header & Navigasi Utama -->
   <header class="sticky-top">
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow-sm py-3" aria-label="Navigasi Utama">
       <div class="container">
@@ -24,11 +24,11 @@
           <span class="badge bg-primary rounded-pill px-3 py-2">MNS</span>
           <div>
             <span class="d-block lh-1 text-white">Mia Nathania Sibuea</span>
-            <small class="text-secondary fw-normal" style="font-size: 0.75rem;">S1 Sistem Informasi · IT Del</small>
+            <small class="text-secondary fw-normal" style="font-size: 0.75rem;">S1 Sistem Informasi · IT Del (12S24005)</small>
           </div>
         </a>
 
-        <!-- Hamburger Toggle Mobile -->
+        <!-- Hamburger Toggle Button -->
         <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar" aria-controls="mainNavbar" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -45,11 +45,14 @@
             <li class="nav-item">
               <a class="nav-link" href="#portofolio">Portofolio</a>
             </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#katalog-layanan">Paket Layanan</a>
+            </li>
             <li class="nav-item ms-lg-2 mt-2 mt-lg-0">
               <a class="btn btn-primary px-3 rounded-pill text-white position-relative" href="#layanan">
-                <i class="bi bi-chat-dots me-1"></i> Konsultasi
-                <!-- UI State Badge: Menampilkan jumlah pesanan tersimpan di LocalStorage -->
-                <span id="orderCountBadge" class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger" style="display: none;">0</span>
+                <i class="bi bi-chat-dots me-1"></i> Pesan Konsultasi
+                <!-- UI Badge Persistensi LocalStorage -->
+                <span id="orderBadge" class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger" style="display: none;">0</span>
               </a>
             </li>
           </ul>
@@ -58,7 +61,7 @@
     </nav>
   </header>
 
-  <!-- ================= 2. HERO SECTION ================= -->
+  <!-- 2. Hero Section -->
   <section id="hero" class="bg-light py-5 border-bottom">
     <div class="container py-lg-4">
       <div class="row align-items-center g-4">
@@ -72,11 +75,11 @@
             Merancang Pengalaman Digital yang <span class="text-primary">Intuitif &amp; Aksesibel</span>
           </h1>
           <p class="lead text-secondary mb-4">
-            Halo! Saya <strong>Mia Nathania Sibuea</strong> (NIM: <strong>12S24005</strong>). Berfokus pada UI/UX Design, Business Process Analysis, dan pengembangan antarmuka web modern berstandar WCAG 2.2 AA.
+            Halo! Saya <strong>Mia Nathania Sibuea</strong>. Berfokus pada UI/UX Design, Business Process Analysis, dan arsitektur antarmuka web kontemporer (*Decoupled Multi-Tier CSR*).
           </p>
           <div class="d-flex flex-wrap gap-3">
             <a href="#portofolio" class="btn btn-primary btn-lg rounded-pill px-4">
-              <i class="bi bi-folder-check me-2"></i>Lihat Portofolio
+              <i class="bi bi-folder-check me-2"></i>Jelajahi Portofolio
             </a>
             <a href="#layanan" class="btn btn-outline-secondary btn-lg rounded-pill px-4">
               <i class="bi bi-envelope me-2"></i>Pesan Layanan
@@ -84,20 +87,40 @@
           </div>
         </div>
 
-        <!-- Kolom Kanan Hero: Metrik Dinamis (Dimuat via app.js) -->
+        <!-- Kolom Kanan Hero: Metrik Dinamis -->
         <div class="col-lg-5">
-          <div class="row g-3" id="heroStatsContainer">
-            <!-- Loading placeholder saat profil di-fetch -->
+          <div class="row g-3">
             <div class="col-6">
-              <div class="card border-0 shadow-sm rounded-4 p-3 bg-white h-100 text-center">
-                <h3 class="fw-bold mb-0 text-primary">4+</h3>
+              <div class="card border-0 shadow-sm rounded-4 p-3 bg-white h-100 text-center metric-card">
+                <div class="d-inline-flex p-3 rounded-circle bg-pink-subtle text-primary mb-2 mx-auto" style="background-color: var(--primary-soft);">
+                  <i class="bi bi-folder-check fs-3" style="color: var(--primary-brand);"></i>
+                </div>
+                <h3 class="fw-bold mb-0 text-dark" id="metricProjects">4+</h3>
                 <small class="text-muted fw-semibold">Proyek Selesai</small>
               </div>
             </div>
+
             <div class="col-6">
-              <div class="card border-0 shadow-sm rounded-4 p-3 bg-white h-100 text-center">
-                <h3 class="fw-bold mb-0 text-primary">UI/UX</h3>
+              <div class="card border-0 shadow-sm rounded-4 p-3 bg-white h-100 text-center metric-card">
+                <div class="d-inline-flex p-3 rounded-circle bg-pink-subtle text-primary mb-2 mx-auto" style="background-color: var(--primary-soft);">
+                  <i class="bi bi-palette fs-3" style="color: var(--primary-brand);"></i>
+                </div>
+                <h3 class="fw-bold mb-0 text-dark" id="metricFocus">UI/UX</h3>
                 <small class="text-muted fw-semibold">Fokus Utama</small>
+              </div>
+            </div>
+
+            <div class="col-12">
+              <div class="card border-0 shadow-sm rounded-4 p-3 bg-white metric-card">
+                <div class="d-flex align-items-center gap-3">
+                  <div class="p-3 rounded-4" style="background-color: var(--primary-soft); color: var(--primary-brand);">
+                    <i class="bi bi-universal-access fs-3"></i>
+                  </div>
+                  <div>
+                    <h6 class="fw-bold mb-1 text-dark">Standar Aksesibilitas Web</h6>
+                    <small class="text-muted d-block">Menerapkan kepatuhan WCAG 2.2 Level AA pada antarmuka pengguna.</small>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -106,105 +129,154 @@
     </div>
   </section>
 
-  <!-- ================= 3. KONTEN INTI ================= -->
-  <main class="page-container container my-5">
-    
+  <!-- 3. Konten Inti Halaman -->
+  <main class="page-container">
     <!-- Section 1: Tentang Saya & Identitas Akademik -->
-    <section id="tentang" class="section-card mb-5">
-      <div class="text-center mb-4">
-        <h2 class="fw-bold text-dark">Tentang Saya</h2>
-        <p class="text-secondary">Profil profesional dan identitas akademik mahasiswa</p>
-      </div>
+    <section id="tentang" class="section-card">
+      <header class="section-header">
+        <h2 class="section-title">Tentang Saya</h2>
+        <p class="section-desc">Profil profesional dan identitas akademik mahasiswa</p>
+      </header>
 
-      <div class="row g-4">
-        <div class="col-lg-7">
-          <div class="card border-0 shadow-sm rounded-4 p-4 h-100 bg-white">
-            <h4 class="fw-bold text-dark mb-3">Profil Profesional</h4>
-            <p class="text-secondary leading-relaxed">
-              Halo! Saya <strong>Mia Nathania Sibuea</strong>, mahasiswa program studi S1 Sistem Informasi di Institut Teknologi Del (NIM: <strong>12S24005</strong>).
-            </p>
-            <p class="text-secondary leading-relaxed">
-              Saya berfokus pada bidang <em>UI/UX Design</em>, <em>Business Process Analysis</em>, serta perancangan antarmuka web kontemporer berarsitektur <em>decoupled</em>. Memiliki komitmen tinggi dalam menciptakan desain web yang ramah pengguna, berstandar aksesibilitas (WCAG 2.2 AA), dan aman dari kerentanan web.
-            </p>
-            <div class="d-flex flex-wrap gap-2 mt-auto">
-              <span class="badge bg-primary-subtle text-primary rounded-pill px-3 py-2">UI/UX Enthusiast</span>
-              <span class="badge bg-secondary-subtle text-secondary rounded-pill px-3 py-2">Sistem Informasi</span>
-              <span class="badge bg-success-subtle text-success rounded-pill px-3 py-2">WCAG 2.2 Level AA</span>
-              <span class="badge bg-info-subtle text-info rounded-pill px-3 py-2">Decoupled CSR</span>
-            </div>
+      <div class="about-layout">
+        <article class="profile-summary">
+          <h3>Profil Profesional</h3>
+          <p>
+            Halo! Saya <strong>Mia Nathania Sibuea</strong>, mahasiswa program studi S1 Sistem Informasi di Institut Teknologi Del (NIM: <strong>12S24005</strong>).
+          </p>
+          <p>
+            Saya berfokus pada bidang <em>UI/UX Design</em>, <em>Business Process Analysis</em>, serta perancangan antarmuka web modern. Memiliki komitmen kuat dalam menciptakan desain web berorientasi pengguna, memenuhi standar aksesibilitas web (WCAG 2.2 Level AA), dan arsitektur decoupled berbasis JSON data layer.
+          </p>
+          <div class="profile-tags">
+            <span class="tag-pill">UI/UX Enthusiast</span>
+            <span class="tag-pill">Sistem Informasi</span>
+            <span class="tag-pill">Web Accessibility (A11y)</span>
+            <span class="tag-pill">Institut Teknologi Del</span>
           </div>
-        </div>
+        </article>
 
-        <div class="col-lg-5">
-          <div class="card border-0 shadow-sm rounded-4 p-4 h-100 bg-white">
-            <h4 class="fw-bold text-dark mb-3">Identitas Akademik</h4>
-            <div class="table-responsive">
-              <table class="table table-borderless align-middle mb-0">
-                <tbody>
-                  <tr>
-                    <th scope="row" class="text-muted fw-semibold">Nama</th>
-                    <td class="text-dark fw-bold">Mia Nathania Sibuea</td>
-                  </tr>
-                  <tr>
-                    <th scope="row" class="text-muted fw-semibold">NIM</th>
-                    <td><span class="badge bg-dark">12S24005</span></td>
-                  </tr>
-                  <tr>
-                    <th scope="row" class="text-muted fw-semibold">Prodi</th>
-                    <td>S1 Sistem Informasi</td>
-                  </tr>
-                  <tr>
-                    <th scope="row" class="text-muted fw-semibold">Institusi</th>
-                    <td>Institut Teknologi Del</td>
-                  </tr>
-                  <tr>
-                    <th scope="row" class="text-muted fw-semibold">Mata Kuliah</th>
-                    <td>Pemrograman &amp; Pengujian Web</td>
-                  </tr>
-                  <tr>
-                    <th scope="row" class="text-muted fw-semibold">Dosen</th>
-                    <td>Chandro Pardede, S.Kom., M.Sc.</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
+        <aside class="academic-sidebar" aria-label="Identitas Akademik">
+          <h3>Identitas Akademik</h3>
+          <div class="table-wrapper">
+            <table class="academic-table">
+              <caption>Data Akademik Mahasiswa</caption>
+              <thead>
+                <tr>
+                  <th scope="col">Atribut</th>
+                  <th scope="col">Keterangan</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row">Nama Mahasiswa</th>
+                  <td>Mia Nathania Sibuea</td>
+                </tr>
+                <tr>
+                  <th scope="row">NIM</th>
+                  <td>12S24005</td>
+                </tr>
+                <tr>
+                  <th scope="row">Program Studi</th>
+                  <td>S1 Sistem Informasi</td>
+                </tr>
+                <tr>
+                  <th scope="row">Fakultas</th>
+                  <td>Fakultas Informatika &amp; Teknik Elektro</td>
+                </tr>
+                <tr>
+                  <th scope="row">Institusi</th>
+                  <td>Institut Teknologi Del</td>
+                </tr>
+                <tr>
+                  <th scope="row">Mata Kuliah</th>
+                  <td>Pemrograman &amp; Pengujian Aplikasi Web</td>
+                </tr>
+                <tr>
+                  <th scope="row">Dosen Pengampu</th>
+                  <td>Chandro Pardede, S.Kom., M.Sc.</td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th scope="row">Status Mahasiswa</th>
+                  <td>Aktif Reguler (Semester Genap 2025/2026)</td>
+                </tr>
+              </tfoot>
+            </table>
           </div>
-        </div>
+        </aside>
       </div>
     </section>
 
-    <!-- Section 2: Portofolio Proyek (Dynamic CSR Shell) -->
-    <section id="portofolio" class="section-card mb-5">
-      <div class="text-center mb-4">
-        <h2 class="fw-bold text-dark">Portofolio &amp; Rekapitulasi Proyek</h2>
-        <p class="text-secondary">Daftar proyek akademik yang dimuat secara dinamis via Asynchronous Fetch API (CSR)</p>
+    <!-- Section 2: Portofolio Karya (Dynamic Client-Side Rendering) -->
+    <section id="portofolio" class="section-card">
+      <header class="section-header d-flex flex-wrap justify-content-between align-items-end gap-3">
+        <div>
+          <h2 class="section-title">Portofolio &amp; Rekapitulasi Proyek</h2>
+          <p class="section-desc">Koleksi proyek dinamis yang dimuat asinkron via RESTful JSON Provider</p>
+        </div>
+
+        <!-- Filter Kategori Proyek Instan -->
+        <div class="btn-group filter-group flex-wrap shadow-sm rounded-pill p-1 bg-white border" role="group" aria-label="Filter Kategori Proyek">
+          <button type="button" class="btn btn-primary btn-sm rounded-pill px-3 filter-btn active" data-filter="all">Semua</button>
+          <button type="button" class="btn btn-outline-primary btn-sm rounded-pill px-3 filter-btn" data-filter="Requirements Engineering">Requirements</button>
+          <button type="button" class="btn btn-outline-primary btn-sm rounded-pill px-3 filter-btn" data-filter="UI/UX Design">UI/UX</button>
+          <button type="button" class="btn btn-outline-primary btn-sm rounded-pill px-3 filter-btn" data-filter="Business Plan">Business Plan</button>
+          <button type="button" class="btn btn-outline-primary btn-sm rounded-pill px-3 filter-btn" data-filter="Process Analysis">Process Analysis</button>
+        </div>
+      </header>
+
+      <!-- Container Dinamis Portofolio (Bersih dari Hardcoded Cards) -->
+      <div id="portfolioContainer" class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4 mb-5">
+        <!-- Konten diinjeksi secara dinamis oleh js/app.js (Mengelola Loading, Success, Empty, & Error States) -->
       </div>
 
-      <!-- Filter Kategori Proyek Instan -->
-      <div class="d-flex flex-wrap gap-2 justify-content-center mb-4" id="projectFilterButtons">
-        <button type="button" class="btn btn-primary rounded-pill px-4 active" data-filter="all">Semua Kategori</button>
-        <button type="button" class="btn btn-outline-secondary rounded-pill px-4" data-filter="Requirements Engineering">Requirements</button>
-        <button type="button" class="btn btn-outline-secondary rounded-pill px-4" data-filter="UI/UX Design">UI/UX Design</button>
-        <button type="button" class="btn btn-outline-secondary rounded-pill px-4" data-filter="Business Plan">Business Plan</button>
-        <button type="button" class="btn btn-outline-secondary rounded-pill px-4" data-filter="Process Analysis">Process Analysis</button>
-      </div>
+      <!-- Dua Jenis HTML Lists (Unordered & Ordered) -->
+      <div class="lists-grid">
+        <article class="list-card">
+          <h3>Keahlian Utama (Skills)</h3>
+          <p class="list-subtitle">Kompetensi teknis dan perangkat yang dikuasai:</p>
+          <ul class="styled-list skill-list">
+            <li><strong>Frontend Web:</strong> HTML5 Semantic, Modern CSS3, Flexbox, CSS Grid, JavaScript ES6+</li>
+            <li><strong>Bahasa Pemrograman:</strong> Java, C, Relational Database SQL</li>
+            <li><strong>UI/UX &amp; Pemodelan:</strong> Figma, Canva, draw.io (UML &amp; BPMN)</li>
+            <li><strong>Alat Pengembang:</strong> Git, GitHub, GitHub Pages, Visual Studio Code</li>
+          </ul>
+        </article>
 
-      <!-- Wadah Dinamis untuk Kartu Portofolio (CSR) -->
-      <!-- Diisi oleh app.js: Loading State -> Success State / Empty State / Error State -->
-      <div id="projectsContainer" class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4 mb-5">
-        <!-- Kartu diinjeksi secara otomatis oleh JavaScript -->
+        <article class="list-card">
+          <h3>Langkah Belajar Praktikum Web</h3>
+          <p class="list-subtitle">Alur metodologis transformasi arsitektur web minggu 04:</p>
+          <ol class="styled-list step-list">
+            <li>Mendekomposisi struktur aplikasi ke dalam diagram C4 Container Model.</li>
+            <li>Memisahkan data ke lapisan terdesentralisasi (<code>/data/*.json</code>).</li>
+            <li>Menerapkan pemanggilan asinkron Fetch API dengan penanganan 4 UI States.</li>
+            <li>Mengintegrasikan satu modal dinamis universal tunggal bebas dari DOM XSS.</li>
+            <li>Merefaktor form submission ke AJAX POST dan mencatat profil performa di DevTools.</li>
+          </ol>
+        </article>
       </div>
     </section>
 
-    <!-- Section 3: Formulir Pemesanan Layanan (Decoupled REST Form) -->
-    <section id="layanan" class="section-card mb-5">
-      <div class="text-center mb-4">
-        <h2 class="fw-bold text-dark">Formulir Pemesanan Layanan &amp; Konsultasi</h2>
-        <p class="text-secondary">Pengiriman formulir asinkron (AJAX/Fetch POST) dengan serialisasi JSON &amp; Toast feedback</p>
+    <!-- Section Tambahan: Katalog Paket Layanan (Dinamis dari services.json) -->
+    <section id="katalog-layanan" class="section-card">
+      <header class="section-header">
+        <h2 class="section-title">Katalog Paket Layanan</h2>
+        <p class="section-desc">Pilihan paket konsultasi profesional berstandar industri</p>
+      </header>
+      <div id="servicesContainer" class="row g-4 mb-4">
+        <!-- Diisi secara dinamis dari data/services.json -->
       </div>
+    </section>
+
+    <!-- Section 3: Formulir Pemesanan Layanan / Kontak (Asynchronous Decoupled REST Form) -->
+    <section id="layanan" class="section-card">
+      <header class="section-header">
+        <h2 class="section-title">Formulir Pemesanan Layanan &amp; Konsultasi</h2>
+        <p class="section-desc">Kirim permintaan asinkron tanpa reload halaman penuh (AJAX/Fetch POST)</p>
+      </header>
 
       <div class="card border-0 shadow-sm rounded-4 p-4 p-md-5 bg-white">
-        <!-- Form dengan id consultationForm untuk penanganan asinkron murni di app.js -->
         <form id="consultationForm" class="needs-validation" novalidate>
           <h5 class="fw-bold text-dark mb-4 pb-2 border-bottom">
             <i class="bi bi-person-lines-fill text-primary me-2"></i>Identitas &amp; Detail Permintaan
@@ -226,7 +298,7 @@
             <div class="invalid-feedback">Gunakan alamat email resmi kampus yang valid.</div>
           </div>
 
-          <!-- 3. Input Group Berikon: Nomor WhatsApp -->
+          <!-- 3. Input Group Berikon: Nomor Telepon / WhatsApp -->
           <div class="mb-3">
             <label for="telp" class="form-label small fw-semibold text-muted">Nomor WhatsApp / Telepon <span class="text-danger">*</span></label>
             <div class="input-group">
@@ -240,12 +312,12 @@
           <!-- 4. Floating Label: Select Kategori Topik -->
           <div class="form-floating mb-3">
             <select class="form-select rounded-3" id="floatingKategori" name="kategori" required>
-              <option value="" selected disabled>-- Pilih Topik Peminatan --</option>
-              <option value="frontend">Frontend Engineering &amp; UI/UX</option>
-              <option value="backend">Backend &amp; Cloud Architecture</option>
-              <option value="testing">Web Quality Assurance &amp; Testing</option>
+              <option value="" selected disabled>-- Pilih Topik Peminatan / Layanan --</option>
+              <option value="UI/UX & Accessibility Audit">UI/UX & Accessibility Audit</option>
+              <option value="Pemodelan Proses Bisnis & UML">Pemodelan Proses Bisnis & UML</option>
+              <option value="Frontend Prototyping & Code Review">Frontend Prototyping & Code Review</option>
             </select>
-            <label for="floatingKategori"><i class="bi bi-journal-code me-1"></i> Topik Peminatan Matakuliah *</label>
+            <label for="floatingKategori"><i class="bi bi-journal-code me-1"></i> Topik Peminatan / Layanan *</label>
             <div class="invalid-feedback">Silakan pilih salah satu topik peminatan.</div>
           </div>
 
@@ -297,28 +369,34 @@
         </form>
       </div>
     </section>
-
   </main>
 
-  <!-- ================= 4. FOOTER ================= -->
-  <footer class="bg-dark text-white py-4 mt-5">
-    <div class="container text-center">
-      <p class="mb-1">&copy; 2026 Mia Nathania Sibuea (NIM: 12S24005) · Institut Teknologi Del</p>
-      <small class="text-secondary">Praktikum Minggu 04: Pemrograman dan Pengujian Web (12S3101) - Decoupled CSR Architecture</small>
+  <!-- 4. Footer Penutup Dokumen -->
+  <footer class="site-footer">
+    <div class="footer-container">
+      <p class="copyright">&copy; 2026 Mia Nathania Sibuea (NIM: 12S24005) · Institut Teknologi Del</p>
+      <p class="footer-subtext">Praktikum Minggu 04: Pemrograman dan Pengujian Aplikasi Web (12S3101)</p>
+      <nav class="footer-nav" aria-label="Navigasi Footer">
+        <a href="#tentang">Tentang Saya</a>
+        <span class="nav-separator" aria-hidden="true">·</span>
+        <a href="#portofolio">Portofolio</a>
+        <span class="nav-separator" aria-hidden="true">·</span>
+        <a href="#layanan">Formulir Layanan</a>
+      </nav>
     </div>
   </footer>
 
-  <!-- ================= 5. UNIVERSAL DYNAMIC MODAL (1 MODAL TUNGGAL) ================= -->
-  <!-- Komponen Modal Tunggal yang digunakan bersama untuk menyajikan rincian proyek secara dinamis -->
+  <!-- ================= 5. SATU UNIVERSAL DYNAMIC MODAL TUNGGAL ================= -->
+  <!-- Menggantikan 4 modal statis sebelumnya sesuai spesifikasi Lab 2 & Standar Evaluasi 4 -->
   <div class="modal fade" id="universalProjectModal" tabindex="-1" aria-labelledby="projectModalTitle" aria-hidden="true">
     <div class="modal-dialog modal-lg modal-dialog-centered">
-      <div class="modal-content rounded-4 border-0 shadow-lg">
+      <div class="modal-content border-0 shadow-lg rounded-4 overflow-hidden">
         <div class="modal-header bg-primary text-white">
-          <h5 class="modal-title fw-bold" id="projectModalTitle">Judul Proyek</h5>
-          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+          <h5 class="modal-title fw-bold" id="projectModalTitle">Detail Proyek</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Tutup"></button>
         </div>
         <div class="modal-body p-4" id="projectModalBody">
-          <!-- Konten diinjeksi secara dinamis via js/app.js berdasarkan data-id yang diklik -->
+          <!-- Konten diinjeksi secara dinamis via JavaScript sesuai project ID yang diklik -->
         </div>
         <div class="modal-footer border-top-0">
           <button type="button" class="btn btn-secondary rounded-pill px-4" data-bs-dismiss="modal">Tutup</button>
@@ -327,28 +405,29 @@
     </div>
   </div>
 
-  <!-- ================= 6. BOOTSTRAP TOAST CONTAINER ================= -->
-  <!-- Feedback visual interaktif saat formulir asinkron berhasil dikirim -->
+  <!-- ================= 6. BOOTSTRAP TOAST NOTIFICATION CONTAINER ================= -->
   <div class="toast-container position-fixed bottom-0 end-0 p-3" style="z-index: 1100;">
-    <div id="appToast" class="toast border-0 shadow-lg rounded-4 overflow-hidden" role="alert" aria-live="assertive" aria-atomic="true">
-      <div class="toast-header text-white bg-success">
-        <i class="bi bi-check-circle-fill me-2"></i>
+    <div id="liveToast" class="toast shadow-lg rounded-4 border-0" role="alert" aria-live="assertive" aria-atomic="true">
+      <div class="toast-header border-bottom-0">
+        <i class="bi bi-check-circle-fill text-success me-2 fs-5"></i>
         <strong class="me-auto" id="toastTitle">Notifikasi</strong>
-        <small class="text-white-50">Baru saja</small>
-        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="toast" aria-label="Close"></button>
+        <small class="text-muted">Baru saja</small>
+        <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
       </div>
-      <div class="toast-body bg-white text-dark py-3" id="toastBody">
-        Permintaan berhasil diproses.
+      <div class="toast-body pt-0 pb-3" id="toastMessage">
+        Pesan feedback sistem.
       </div>
     </div>
   </div>
 
   <!-- ================= 7. SCRIPTS ================= -->
-  <!-- 1. Bootstrap 5.3.3 JS Bundle CDN -->
+  <!-- Bootstrap 5.3.3 JS Bundle -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-  <!-- 2. Data Access Layer (Fetch API & REST Mock) -->
+
+  <!-- Data Access Layer (Fetch & API Service) -->
   <script src="js/api-service.js"></script>
-  <!-- 3. Presentation Layer & State Manager (Dynamic CSR, Modal, Toast, LocalStorage) -->
+
+  <!-- Presentation Layer (DOM Controller & Event Listeners) -->
   <script src="js/app.js"></script>
 </body>
 </html>
