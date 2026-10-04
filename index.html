@@ -6,16 +6,19 @@
   <meta name="description" content="Portofolio Decoupled CSR & Layanan Konsultasi Web - Mia Nathania Sibuea - Institut Teknologi Del">
   <title>Portofolio & Layanan Web - Mia Nathania Sibuea (12S24005)</title>
 
-  <!-- 1. Bootstrap 5.3.3 CSS -->
+  <!-- 1. Content Security Policy (CSP) Direktif - Keamanan Lapis Pertama Sesuai Modul Hal. 2 -->
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://cdn.jsdelivr.net 'unsafe-inline'; style-src 'self' https://cdn.jsdelivr.net 'unsafe-inline'; font-src 'self' https://cdn.jsdelivr.net; img-src 'self' data: https://images.unsplash.com; connect-src 'self';">
+
+  <!-- 2. Bootstrap 5.3.3 CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-  <!-- 2. Bootstrap Icons -->
+  <!-- 3. Bootstrap Icons -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
 
-  <!-- 3. CSS Kustom Terstandarisasi Week 4 -->
+  <!-- 4. CSS Kustom Terstandarisasi Week 4 -->
   <link rel="stylesheet" href="css/custom-style.css">
 </head>
 <body>
-  <!-- 1. Header & Navigasi Utama -->
+  <!-- ================= 1. HEADER & NAVBAR ================= -->
   <header class="sticky-top">
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow-sm py-3" aria-label="Navigasi Utama">
       <div class="container">
@@ -61,7 +64,7 @@
     </nav>
   </header>
 
-  <!-- 2. Hero Section -->
+  <!-- ================= 2. HERO SECTION ================= -->
   <section id="hero" class="bg-light py-5 border-bottom">
     <div class="container py-lg-4">
       <div class="row align-items-center g-4">
@@ -87,7 +90,7 @@
           </div>
         </div>
 
-        <!-- Kolom Kanan Hero: Metrik Dinamis -->
+        <!-- Kolom Kanan Hero: Metrik Dinamis (Dimuat via profile.json) -->
         <div class="col-lg-5">
           <div class="row g-3">
             <div class="col-6">
@@ -129,7 +132,7 @@
     </div>
   </section>
 
-  <!-- 3. Konten Inti Halaman -->
+  <!-- ================= 3. KONTEN INTI HALAMAN ================= -->
   <main class="page-container">
     <!-- Section 1: Tentang Saya & Identitas Akademik -->
     <section id="tentang" class="section-card">
@@ -216,19 +219,20 @@
           <p class="section-desc">Koleksi proyek dinamis yang dimuat asinkron via RESTful JSON Provider</p>
         </div>
 
-        <!-- Filter Kategori Proyek Instan -->
+        <!-- Filter Kategori Proyek Instan (Termasuk Tombol Quality Assurance untuk Uji Empty State) -->
         <div class="btn-group filter-group flex-wrap shadow-sm rounded-pill p-1 bg-white border" role="group" aria-label="Filter Kategori Proyek">
           <button type="button" class="btn btn-primary btn-sm rounded-pill px-3 filter-btn active" data-filter="all">Semua</button>
           <button type="button" class="btn btn-outline-primary btn-sm rounded-pill px-3 filter-btn" data-filter="Requirements Engineering">Requirements</button>
           <button type="button" class="btn btn-outline-primary btn-sm rounded-pill px-3 filter-btn" data-filter="UI/UX Design">UI/UX</button>
           <button type="button" class="btn btn-outline-primary btn-sm rounded-pill px-3 filter-btn" data-filter="Business Plan">Business Plan</button>
           <button type="button" class="btn btn-outline-primary btn-sm rounded-pill px-3 filter-btn" data-filter="Process Analysis">Process Analysis</button>
+          <button type="button" class="btn btn-outline-primary btn-sm rounded-pill px-3 filter-btn" data-filter="Quality Assurance">Quality Assurance</button>
         </div>
       </header>
 
       <!-- Container Dinamis Portofolio (Bersih dari Hardcoded Cards) -->
       <div id="portfolioContainer" class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4 mb-5">
-        <!-- Konten diinjeksi secara dinamis oleh js/app.js (Mengelola Loading, Success, Empty, & Error States) -->
+        <!-- Konten diinjeksi secara dinamis oleh js/app.js (Loading, Success, Empty, & Error States) -->
       </div>
 
       <!-- Dua Jenis HTML Lists (Unordered & Ordered) -->
@@ -258,7 +262,7 @@
       </div>
     </section>
 
-    <!-- Section Tambahan: Katalog Paket Layanan (Dinamis dari services.json) -->
+    <!-- Section 2.5: Katalog Paket Layanan (Dinamis dari services.json) -->
     <section id="katalog-layanan" class="section-card">
       <header class="section-header">
         <h2 class="section-title">Katalog Paket Layanan</h2>
@@ -313,9 +317,9 @@
           <div class="form-floating mb-3">
             <select class="form-select rounded-3" id="floatingKategori" name="kategori" required>
               <option value="" selected disabled>-- Pilih Topik Peminatan / Layanan --</option>
-              <option value="UI/UX & Accessibility Audit">UI/UX & Accessibility Audit</option>
-              <option value="Pemodelan Proses Bisnis & UML">Pemodelan Proses Bisnis & UML</option>
-              <option value="Frontend Prototyping & Code Review">Frontend Prototyping & Code Review</option>
+              <option value="Audit Aksesibilitas & UI/UX Review">Audit Aksesibilitas &amp; UI/UX Review</option>
+              <option value="Pemodelan Proses Bisnis & UML">Pemodelan Proses Bisnis &amp; UML</option>
+              <option value="Konsultasi Refactoring Frontend Web">Konsultasi Refactoring Frontend Web</option>
             </select>
             <label for="floatingKategori"><i class="bi bi-journal-code me-1"></i> Topik Peminatan / Layanan *</label>
             <div class="invalid-feedback">Silakan pilih salah satu topik peminatan.</div>
@@ -371,15 +375,17 @@
     </section>
   </main>
 
-  <!-- 4. Footer Penutup Dokumen -->
+  <!-- ================= 4. FOOTER PENUTUP ================= -->
   <footer class="site-footer">
     <div class="footer-container">
       <p class="copyright">&copy; 2026 Mia Nathania Sibuea (NIM: 12S24005) · Institut Teknologi Del</p>
-      <p class="footer-subtext">Praktikum Minggu 04: Pemrograman dan Pengujian Aplikasi Web (12S3101)</p>
+      <p class="footer-subtext">Praktikum Minggu 04: Pemrograman dan Pengujian Aplikasi Web (12S3101) - Decoupled CSR Architecture</p>
       <nav class="footer-nav" aria-label="Navigasi Footer">
         <a href="#tentang">Tentang Saya</a>
         <span class="nav-separator" aria-hidden="true">·</span>
         <a href="#portofolio">Portofolio</a>
+        <span class="nav-separator" aria-hidden="true">·</span>
+        <a href="#katalog-layanan">Paket Layanan</a>
         <span class="nav-separator" aria-hidden="true">·</span>
         <a href="#layanan">Formulir Layanan</a>
       </nav>
@@ -387,7 +393,6 @@
   </footer>
 
   <!-- ================= 5. SATU UNIVERSAL DYNAMIC MODAL TUNGGAL ================= -->
-  <!-- Menggantikan 4 modal statis sebelumnya sesuai spesifikasi Lab 2 & Standar Evaluasi 4 -->
   <div class="modal fade" id="universalProjectModal" tabindex="-1" aria-labelledby="projectModalTitle" aria-hidden="true">
     <div class="modal-dialog modal-lg modal-dialog-centered">
       <div class="modal-content border-0 shadow-lg rounded-4 overflow-hidden">
@@ -396,7 +401,7 @@
           <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Tutup"></button>
         </div>
         <div class="modal-body p-4" id="projectModalBody">
-          <!-- Konten diinjeksi secara dinamis via JavaScript sesuai project ID yang diklik -->
+          <!-- Diinjeksi secara dinamis via js/app.js -->
         </div>
         <div class="modal-footer border-top-0">
           <button type="button" class="btn btn-secondary rounded-pill px-4" data-bs-dismiss="modal">Tutup</button>
@@ -405,7 +410,7 @@
     </div>
   </div>
 
-  <!-- ================= 6. BOOTSTRAP TOAST NOTIFICATION CONTAINER ================= -->
+  <!-- ================= 6. BOOTSTRAP TOAST CONTAINER ================= -->
   <div class="toast-container position-fixed bottom-0 end-0 p-3" style="z-index: 1100;">
     <div id="liveToast" class="toast shadow-lg rounded-4 border-0" role="alert" aria-live="assertive" aria-atomic="true">
       <div class="toast-header border-bottom-0">
@@ -421,13 +426,13 @@
   </div>
 
   <!-- ================= 7. SCRIPTS ================= -->
-  <!-- Bootstrap 5.3.3 JS Bundle -->
+  <!-- 1. Bootstrap 5.3.3 JS Bundle -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
-  <!-- Data Access Layer (Fetch & API Service) -->
+  <!-- 2. Data Access Layer (Fetch & API Service) -->
   <script src="js/api-service.js"></script>
 
-  <!-- Presentation Layer (DOM Controller & Event Listeners) -->
+  <!-- 3. Presentation Layer (DOM Controller & Event Listeners) -->
   <script src="js/app.js"></script>
 </body>
 </html>
