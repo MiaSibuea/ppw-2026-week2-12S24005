@@ -3,19 +3,19 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Portofolio dan Layanan Konsultasi Web Mia Nathania Sibuea - Institut Teknologi Del">
-    <title>Portofolio Mia Nathania Sibuea - 12S24005</title>
+  <meta name="description" content="Portofolio Decoupled CSR & Layanan Konsultasi Web - Mia Nathania Sibuea - Institut Teknologi Del">
+  <title>Portofolio & Layanan Web - Mia Nathania Sibuea (12S24005)</title>
 
   <!-- 1. Bootstrap 5.3.3 CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <!-- 2. Bootstrap Icons -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
 
-  <!-- 3. CSS Kustom Anda (WAJIB di bawah Bootstrap) -->
-  <link rel="stylesheet" href="style.css">
+  <!-- 3. CSS Kustom Terstandarisasi Week 4 -->
+  <link rel="stylesheet" href="css/custom-style.css">
 </head>
 <body>
-  <!-- 1. Header & Navigasi Utama (Bootstrap Responsive Navbar) -->
+  <!-- 1. Header & Navigasi Utama -->
   <header class="sticky-top">
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow-sm py-3" aria-label="Navigasi Utama">
       <div class="container">
@@ -24,11 +24,11 @@
           <span class="badge bg-primary rounded-pill px-3 py-2">MNS</span>
           <div>
             <span class="d-block lh-1 text-white">Mia Nathania Sibuea</span>
-            <small class="text-secondary fw-normal" style="font-size: 0.75rem;">S1 Sistem Informasi · IT Del</small>
+            <small class="text-secondary fw-normal" style="font-size: 0.75rem;">S1 Sistem Informasi · IT Del (12S24005)</small>
           </div>
         </a>
 
-        <!-- Hamburger Toggle Button untuk Layar Ponsel/Mobile -->
+        <!-- Hamburger Toggle Button -->
         <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar" aria-controls="mainNavbar" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -45,9 +45,14 @@
             <li class="nav-item">
               <a class="nav-link" href="#portofolio">Portofolio</a>
             </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#katalog-layanan">Paket Layanan</a>
+            </li>
             <li class="nav-item ms-lg-2 mt-2 mt-lg-0">
-              <a class="btn btn-primary px-3 rounded-pill text-white" href="#layanan">
-                <i class="bi bi-chat-dots me-1"></i> Konsultasi
+              <a class="btn btn-primary px-3 rounded-pill text-white position-relative" href="#layanan">
+                <i class="bi bi-chat-dots me-1"></i> Pesan Konsultasi
+                <!-- UI Badge Persistensi LocalStorage -->
+                <span id="orderBadge" class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger" style="display: none;">0</span>
               </a>
             </li>
           </ul>
@@ -56,7 +61,7 @@
     </nav>
   </header>
 
-  <!-- 2. Hero Section (Proporsional dengan Call-to-Action) -->
+  <!-- 2. Hero Section -->
   <section id="hero" class="bg-light py-5 border-bottom">
     <div class="container py-lg-4">
       <div class="row align-items-center g-4">
@@ -70,11 +75,11 @@
             Merancang Pengalaman Digital yang <span class="text-primary">Intuitif &amp; Aksesibel</span>
           </h1>
           <p class="lead text-secondary mb-4">
-            Halo! Saya <strong>Mia Nathania Sibuea</strong>. Berfokus pada UI/UX Design, Business Process Analysis, dan pengembangan antarmuka web modern berstandar WCAG 2.2.
+            Halo! Saya <strong>Mia Nathania Sibuea</strong>. Berfokus pada UI/UX Design, Business Process Analysis, dan arsitektur antarmuka web kontemporer (*Decoupled Multi-Tier CSR*).
           </p>
           <div class="d-flex flex-wrap gap-3">
             <a href="#portofolio" class="btn btn-primary btn-lg rounded-pill px-4">
-              <i class="bi bi-folder-check me-2"></i>Lihat Portofolio
+              <i class="bi bi-folder-check me-2"></i>Jelajahi Portofolio
             </a>
             <a href="#layanan" class="btn btn-outline-secondary btn-lg rounded-pill px-4">
               <i class="bi bi-envelope me-2"></i>Pesan Layanan
@@ -82,33 +87,29 @@
           </div>
         </div>
 
-        <!-- Kolom Kartu Sorotan / Identitas Cepat -->
-        <!-- Kolom Kanan Hero: Kartu Statistik Portofolio (Terinspirasi Lab 1) -->
+        <!-- Kolom Kanan Hero: Metrik Dinamis -->
         <div class="col-lg-5">
           <div class="row g-3">
-            <!-- Metrik 1 -->
             <div class="col-6">
               <div class="card border-0 shadow-sm rounded-4 p-3 bg-white h-100 text-center metric-card">
                 <div class="d-inline-flex p-3 rounded-circle bg-pink-subtle text-primary mb-2 mx-auto" style="background-color: var(--primary-soft);">
                   <i class="bi bi-folder-check fs-3" style="color: var(--primary-brand);"></i>
                 </div>
-                <h3 class="fw-bold mb-0 text-dark">4+</h3>
+                <h3 class="fw-bold mb-0 text-dark" id="metricProjects">4+</h3>
                 <small class="text-muted fw-semibold">Proyek Selesai</small>
               </div>
             </div>
 
-            <!-- Metrik 2 -->
             <div class="col-6">
               <div class="card border-0 shadow-sm rounded-4 p-3 bg-white h-100 text-center metric-card">
                 <div class="d-inline-flex p-3 rounded-circle bg-pink-subtle text-primary mb-2 mx-auto" style="background-color: var(--primary-soft);">
                   <i class="bi bi-palette fs-3" style="color: var(--primary-brand);"></i>
                 </div>
-                <h3 class="fw-bold mb-0 text-dark">UI/UX</h3>
+                <h3 class="fw-bold mb-0 text-dark" id="metricFocus">UI/UX</h3>
                 <small class="text-muted fw-semibold">Fokus Utama</small>
               </div>
             </div>
 
-            <!-- Kartu Sorotan Kompetensi -->
             <div class="col-12">
               <div class="card border-0 shadow-sm rounded-4 p-3 bg-white metric-card">
                 <div class="d-flex align-items-center gap-3">
@@ -124,9 +125,11 @@
             </div>
           </div>
         </div>
+      </div>
+    </div>
   </section>
 
-  <!-- 2. Konten Inti Halaman -->
+  <!-- 3. Konten Inti Halaman -->
   <main class="page-container">
     <!-- Section 1: Tentang Saya & Identitas Akademik -->
     <section id="tentang" class="section-card">
@@ -142,7 +145,7 @@
             Halo! Saya <strong>Mia Nathania Sibuea</strong>, mahasiswa program studi S1 Sistem Informasi di Institut Teknologi Del (NIM: <strong>12S24005</strong>).
           </p>
           <p>
-            Saya berfokus pada bidang <em>UI/UX Design</em>, <em>Business Process Analysis</em>, serta perancangan antarmuka web modern. Saya memiliki komitmen kuat dalam menciptakan desain web yang berorientasi pada kepuasan pengguna, memenuhi standar aksesibilitas web (WCAG 2.2 Level AA), dan tersusun menggunakan tata letak semantik yang bersih.
+            Saya berfokus pada bidang <em>UI/UX Design</em>, <em>Business Process Analysis</em>, serta perancangan antarmuka web modern. Memiliki komitmen kuat dalam menciptakan desain web berorientasi pengguna, memenuhi standar aksesibilitas web (WCAG 2.2 Level AA), dan arsitektur decoupled berbasis JSON data layer.
           </p>
           <div class="profile-tags">
             <span class="tag-pill">UI/UX Enthusiast</span>
@@ -205,103 +208,27 @@
       </div>
     </section>
 
-    <!-- Section 2: Portofolio Karya, Tabel Capaian & Daftar Keahlian -->
+    <!-- Section 2: Portofolio Karya (Dynamic Client-Side Rendering) -->
     <section id="portofolio" class="section-card">
-      <header class="section-header">
-        <h2 class="section-title">Portofolio &amp; Rekapitulasi Proyek</h2>
-        <p class="section-desc">Data riwayat proyek akademik, pemodelan sistem, dan peta kompetensi</p>
+      <header class="section-header d-flex flex-wrap justify-content-between align-items-end gap-3">
+        <div>
+          <h2 class="section-title">Portofolio &amp; Rekapitulasi Proyek</h2>
+          <p class="section-desc">Koleksi proyek dinamis yang dimuat asinkron via RESTful JSON Provider</p>
+        </div>
+
+        <!-- Filter Kategori Proyek Instan -->
+        <div class="btn-group filter-group flex-wrap shadow-sm rounded-pill p-1 bg-white border" role="group" aria-label="Filter Kategori Proyek">
+          <button type="button" class="btn btn-primary btn-sm rounded-pill px-3 filter-btn active" data-filter="all">Semua</button>
+          <button type="button" class="btn btn-outline-primary btn-sm rounded-pill px-3 filter-btn" data-filter="Requirements Engineering">Requirements</button>
+          <button type="button" class="btn btn-outline-primary btn-sm rounded-pill px-3 filter-btn" data-filter="UI/UX Design">UI/UX</button>
+          <button type="button" class="btn btn-outline-primary btn-sm rounded-pill px-3 filter-btn" data-filter="Business Plan">Business Plan</button>
+          <button type="button" class="btn btn-outline-primary btn-sm rounded-pill px-3 filter-btn" data-filter="Process Analysis">Process Analysis</button>
+        </div>
       </header>
 
-      <!-- Tabel Semantik Proyek -->
-      <!-- Grid 4 Kartu Portofolio Responsif (Bootstrap 5) -->
-      <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4 mb-5">
-        <!-- Kartu Proyek 1 -->
-        <div class="col">
-          <div class="card h-100 shadow-sm border-0 project-card rounded-4 overflow-hidden">
-            <div class="card-img-top bg-primary-subtle text-primary d-flex align-items-center justify-content-center" style="height: 180px;">
-              <i class="bi bi-door-open display-4"></i>
-            </div>
-            <div class="card-body d-flex flex-column">
-              <div class="mb-2">
-                <span class="badge bg-primary-subtle text-primary rounded-pill">Requirements Eng.</span>
-                <span class="badge bg-secondary-subtle text-secondary rounded-pill">2025</span>
-              </div>
-              <h5 class="card-title fw-bold text-dark">Sistem Izin Ruangan</h5>
-              <p class="card-text text-muted small flex-grow-1">
-                Analisis kebutuhan sistem, pemodelan proses bisnis, dan perancangan diagram UML (Use Case, DFD, ERD) untuk otomasi perizinan ruangan kampus.
-              </p>
-              <button type="button" class="btn btn-outline-primary rounded-pill mt-3 w-100" data-bs-toggle="modal" data-bs-target="#modalProyek1">
-                <i class="bi bi-eye me-1"></i> Detail Proyek
-              </button>
-            </div>
-          </div>
-        </div>
-
-        <!-- Kartu Proyek 2 -->
-        <div class="col">
-          <div class="card h-100 shadow-sm border-0 project-card rounded-4 overflow-hidden">
-            <div class="card-img-top bg-success-subtle text-success d-flex align-items-center justify-content-center" style="height: 180px;">
-              <i class="bi bi-heart-pulse display-4"></i>
-            </div>
-            <div class="card-body d-flex flex-column">
-              <div class="mb-2">
-                <span class="badge bg-success-subtle text-success rounded-pill">UI/UX Design</span>
-                <span class="badge bg-secondary-subtle text-secondary rounded-pill">2025</span>
-              </div>
-              <h5 class="card-title fw-bold text-dark">Child Immunization App</h5>
-              <p class="card-text text-muted small flex-grow-1">
-                Perancangan purwarupa interaktif berbasis Figma dengan fokus pada aksesibilitas orang tua dalam memantau jadwal imunisasi anak secara terintegrasi.
-              </p>
-              <button type="button" class="btn btn-outline-success rounded-pill mt-3 w-100" data-bs-toggle="modal" data-bs-target="#modalProyek2">
-                <i class="bi bi-eye me-1"></i> Detail Proyek
-              </button>
-            </div>
-          </div>
-        </div>
-
-        <!-- Kartu Proyek 3 -->
-        <div class="col">
-          <div class="card h-100 shadow-sm border-0 project-card rounded-4 overflow-hidden">
-            <div class="card-img-top bg-warning-subtle text-warning-emphasis d-flex align-items-center justify-content-center" style="height: 180px;">
-              <i class="bi bi-geo-alt display-4"></i>
-            </div>
-            <div class="card-body d-flex flex-column">
-              <div class="mb-2">
-                <span class="badge bg-warning-subtle text-warning-emphasis rounded-pill">Business Plan</span>
-                <span class="badge bg-secondary-subtle text-secondary rounded-pill">2025</span>
-              </div>
-              <h5 class="card-title fw-bold text-dark">OurMemoria - Tourism Platform</h5>
-              <p class="card-text text-muted small flex-grow-1">
-                Platform digital pemesanan tiket wisata &amp; suvenir lokal kawasan Danau Toba yang dirancang untuk memberdayakan UMKM pariwisata.
-              </p>
-              <button type="button" class="btn btn-outline-warning rounded-pill mt-3 w-100" data-bs-toggle="modal" data-bs-target="#modalProyek3">
-                <i class="bi bi-eye me-1"></i> Detail Proyek
-              </button>
-            </div>
-          </div>
-        </div>
-
-        <!-- Kartu Proyek 4 -->
-        <div class="col">
-          <div class="card h-100 shadow-sm border-0 project-card rounded-4 overflow-hidden">
-            <div class="card-img-top bg-info-subtle text-info-emphasis d-flex align-items-center justify-content-center" style="height: 180px;">
-              <i class="bi bi-diagram-3 display-4"></i>
-            </div>
-            <div class="card-body d-flex flex-column">
-              <div class="mb-2">
-                <span class="badge bg-info-subtle text-info-emphasis rounded-pill">Process Analysis</span>
-                <span class="badge bg-secondary-subtle text-secondary rounded-pill">2026</span>
-              </div>
-              <h5 class="card-title fw-bold text-dark">Student Permission Analysis</h5>
-              <p class="card-text text-muted small flex-grow-1">
-                Analisis proses bisnis pengajuan izin mahasiswa melalui pemodelan alur BPMN (As-Is &amp; To-Be) serta identifikasi bottleneck sistem.
-              </p>
-              <button type="button" class="btn btn-outline-info rounded-pill mt-3 w-100" data-bs-toggle="modal" data-bs-target="#modalProyek4">
-                <i class="bi bi-eye me-1"></i> Detail Proyek
-              </button>
-            </div>
-          </div>
-        </div>
+      <!-- Container Dinamis Portofolio (Bersih dari Hardcoded Cards) -->
+      <div id="portfolioContainer" class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4 mb-5">
+        <!-- Konten diinjeksi secara dinamis oleh js/app.js (Mengelola Loading, Success, Empty, & Error States) -->
       </div>
 
       <!-- Dua Jenis HTML Lists (Unordered & Ordered) -->
@@ -310,7 +237,7 @@
           <h3>Keahlian Utama (Skills)</h3>
           <p class="list-subtitle">Kompetensi teknis dan perangkat yang dikuasai:</p>
           <ul class="styled-list skill-list">
-            <li><strong>Frontend Web:</strong> HTML5 Semantic, Modern CSS3, Flexbox, CSS Grid</li>
+            <li><strong>Frontend Web:</strong> HTML5 Semantic, Modern CSS3, Flexbox, CSS Grid, JavaScript ES6+</li>
             <li><strong>Bahasa Pemrograman:</strong> Java, C, Relational Database SQL</li>
             <li><strong>UI/UX &amp; Pemodelan:</strong> Figma, Canva, draw.io (UML &amp; BPMN)</li>
             <li><strong>Alat Pengembang:</strong> Git, GitHub, GitHub Pages, Visual Studio Code</li>
@@ -319,27 +246,38 @@
 
         <article class="list-card">
           <h3>Langkah Belajar Praktikum Web</h3>
-          <p class="list-subtitle">Alur metodologis pengerjaan praktikum minggu 02:</p>
+          <p class="list-subtitle">Alur metodologis transformasi arsitektur web minggu 04:</p>
           <ol class="styled-list step-list">
-            <li>Menyusun arsitektur dokumen HTML5 semantik murni tanpa <em>div-soup</em>.</li>
-            <li>Mengorganisasi data tabular semantik dengan <em>caption</em>, <em>thead</em>, <em>tbody</em>, dan <em>tfoot</em>.</li>
-            <li>Membangun formulir interaktif yang memenuhi standar aksesibilitas WCAG 2.2.</li>
-            <li>Menerapkan prinsip estetika CSS modern (aturan 60-30-10, <em>soft shadow</em>, &amp; <em>border radius</em>).</li>
-            <li>Melakukan versioning terstruktur menggunakan Git dan <em>deployment live</em> di GitHub Pages.</li>
+            <li>Mendekomposisi struktur aplikasi ke dalam diagram C4 Container Model.</li>
+            <li>Memisahkan data ke lapisan terdesentralisasi (<code>/data/*.json</code>).</li>
+            <li>Menerapkan pemanggilan asinkron Fetch API dengan penanganan 4 UI States.</li>
+            <li>Mengintegrasikan satu modal dinamis universal tunggal bebas dari DOM XSS.</li>
+            <li>Merefaktor form submission ke AJAX POST dan mencatat profil performa di DevTools.</li>
           </ol>
         </article>
       </div>
     </section>
 
-    <!-- Section 3: Formulir Pemesanan Layanan / Kontak -->
+    <!-- Section Tambahan: Katalog Paket Layanan (Dinamis dari services.json) -->
+    <section id="katalog-layanan" class="section-card">
+      <header class="section-header">
+        <h2 class="section-title">Katalog Paket Layanan</h2>
+        <p class="section-desc">Pilihan paket konsultasi profesional berstandar industri</p>
+      </header>
+      <div id="servicesContainer" class="row g-4 mb-4">
+        <!-- Diisi secara dinamis dari data/services.json -->
+      </div>
+    </section>
+
+    <!-- Section 3: Formulir Pemesanan Layanan / Kontak (Asynchronous Decoupled REST Form) -->
     <section id="layanan" class="section-card">
       <header class="section-header">
         <h2 class="section-title">Formulir Pemesanan Layanan &amp; Konsultasi</h2>
-        <p class="section-desc">Silakan lengkapi formulir terstruktur di bawah ini untuk memulai sesi konsultasi</p>
+        <p class="section-desc">Kirim permintaan asinkron tanpa reload halaman penuh (AJAX/Fetch POST)</p>
       </header>
 
       <div class="card border-0 shadow-sm rounded-4 p-4 p-md-5 bg-white">
-        <form class="needs-validation" novalidate action="/api/submit" method="POST">
+        <form id="consultationForm" class="needs-validation" novalidate>
           <h5 class="fw-bold text-dark mb-4 pb-2 border-bottom">
             <i class="bi bi-person-lines-fill text-primary me-2"></i>Identitas &amp; Detail Permintaan
           </h5>
@@ -374,12 +312,12 @@
           <!-- 4. Floating Label: Select Kategori Topik -->
           <div class="form-floating mb-3">
             <select class="form-select rounded-3" id="floatingKategori" name="kategori" required>
-              <option value="" selected disabled>-- Pilih Topik Peminatan --</option>
-              <option value="frontend">Frontend Engineering &amp; UI/UX</option>
-              <option value="backend">Backend &amp; Cloud Architecture</option>
-              <option value="testing">Web Quality Assurance &amp; Testing</option>
+              <option value="" selected disabled>-- Pilih Topik Peminatan / Layanan --</option>
+              <option value="UI/UX & Accessibility Audit">UI/UX & Accessibility Audit</option>
+              <option value="Pemodelan Proses Bisnis & UML">Pemodelan Proses Bisnis & UML</option>
+              <option value="Frontend Prototyping & Code Review">Frontend Prototyping & Code Review</option>
             </select>
-            <label for="floatingKategori"><i class="bi bi-journal-code me-1"></i> Topik Peminatan Matakuliah *</label>
+            <label for="floatingKategori"><i class="bi bi-journal-code me-1"></i> Topik Peminatan / Layanan *</label>
             <div class="invalid-feedback">Silakan pilih salah satu topik peminatan.</div>
           </div>
 
@@ -433,11 +371,11 @@
     </section>
   </main>
 
-  <!-- 3. Footer Penutup Dokumen -->
+  <!-- 4. Footer Penutup Dokumen -->
   <footer class="site-footer">
     <div class="footer-container">
       <p class="copyright">&copy; 2026 Mia Nathania Sibuea (NIM: 12S24005) · Institut Teknologi Del</p>
-      <p class="footer-subtext">Praktikum Minggu 02: Pemrograman dan Pengujian Aplikasi Web (12S3101)</p>
+      <p class="footer-subtext">Praktikum Minggu 04: Pemrograman dan Pengujian Aplikasi Web (12S3101)</p>
       <nav class="footer-nav" aria-label="Navigasi Footer">
         <a href="#tentang">Tentang Saya</a>
         <span class="nav-separator" aria-hidden="true">·</span>
@@ -447,24 +385,18 @@
       </nav>
     </div>
   </footer>
-  <!-- ================= MODAL DIALOG DETAIL PROYEK ================= -->
-  <!-- Modal Proyek 1 -->
-  <div class="modal fade" id="modalProyek1" tabindex="-1" aria-labelledby="modalProyek1Label" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered">
-      <div class="modal-content rounded-4 border-0 shadow">
-        <div class="modal-header border-bottom-0 pb-0">
-          <h5 class="modal-title fw-bold" id="modalProyek1Label">Sistem Izin Ruangan</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+
+  <!-- ================= 5. SATU UNIVERSAL DYNAMIC MODAL TUNGGAL ================= -->
+  <!-- Menggantikan 4 modal statis sebelumnya sesuai spesifikasi Lab 2 & Standar Evaluasi 4 -->
+  <div class="modal fade" id="universalProjectModal" tabindex="-1" aria-labelledby="projectModalTitle" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+      <div class="modal-content border-0 shadow-lg rounded-4 overflow-hidden">
+        <div class="modal-header bg-primary text-white">
+          <h5 class="modal-title fw-bold" id="projectModalTitle">Detail Proyek</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Tutup"></button>
         </div>
-        <div class="modal-body">
-          <span class="badge bg-primary mb-3">Requirements Engineering · 2025</span>
-          <p class="text-secondary">Proyek ini berfokus pada perancangan kebutuhan sistem informasi peminjaman dan perizinan ruangan kampus agar proses birokrasi menjadi paperless dan transparan.</p>
-          <h6 class="fw-bold mt-3">Deliverables:</h6>
-          <ul class="text-secondary small">
-            <li>Dokumen SRS (Software Requirements Specification)</li>
-            <li>Diagram UML: Use Case, Activity, Sequence, ERD</li>
-            <li>Kamus Data dan Matriks Ketertelusuran Kebutuhan</li>
-          </ul>
+        <div class="modal-body p-4" id="projectModalBody">
+          <!-- Konten diinjeksi secara dinamis via JavaScript sesuai project ID yang diklik -->
         </div>
         <div class="modal-footer border-top-0">
           <button type="button" class="btn btn-secondary rounded-pill px-4" data-bs-dismiss="modal">Tutup</button>
@@ -473,87 +405,29 @@
     </div>
   </div>
 
-  <!-- Modal Proyek 2 -->
-  <div class="modal fade" id="modalProyek2" tabindex="-1" aria-labelledby="modalProyek2Label" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered">
-      <div class="modal-content rounded-4 border-0 shadow">
-        <div class="modal-header border-bottom-0 pb-0">
-          <h5 class="modal-title fw-bold text-success" id="modalProyek2Label">Child Immunization App</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-          <span class="badge bg-success mb-3">UI/UX &amp; Prototyping · 2025</span>
-          <p class="text-secondary">Aplikasi mobile ramah pengguna untuk membantu posyandu dan orang tua mencatat serta mengingat jadwal vaksinasi dan imunisasi balita tepat waktu.</p>
-          <h6 class="fw-bold mt-3">Peran &amp; Alat:</h6>
-          <ul class="text-secondary small">
-            <li>Tools: Figma, FigJam, Maze Usability Testing</li>
-            <li>Desain UI memenuhi standar rasio kontras WCAG 2.2 AA</li>
-            <li>Interactive High-Fidelity Prototype</li>
-          </ul>
-        </div>
-        <div class="modal-footer border-top-0">
-          <button type="button" class="btn btn-secondary rounded-pill px-4" data-bs-dismiss="modal">Tutup</button>
-        </div>
+  <!-- ================= 6. BOOTSTRAP TOAST NOTIFICATION CONTAINER ================= -->
+  <div class="toast-container position-fixed bottom-0 end-0 p-3" style="z-index: 1100;">
+    <div id="liveToast" class="toast shadow-lg rounded-4 border-0" role="alert" aria-live="assertive" aria-atomic="true">
+      <div class="toast-header border-bottom-0">
+        <i class="bi bi-check-circle-fill text-success me-2 fs-5"></i>
+        <strong class="me-auto" id="toastTitle">Notifikasi</strong>
+        <small class="text-muted">Baru saja</small>
+        <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+      </div>
+      <div class="toast-body pt-0 pb-3" id="toastMessage">
+        Pesan feedback sistem.
       </div>
     </div>
   </div>
 
-  <!-- Modal Proyek 3 -->
-  <div class="modal fade" id="modalProyek3" tabindex="-1" aria-labelledby="modalProyek3Label" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered">
-      <div class="modal-content rounded-4 border-0 shadow">
-        <div class="modal-header border-bottom-0 pb-0">
-          <h5 class="modal-title fw-bold text-warning" id="modalProyek3Label">OurMemoria - Tourism Platform</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-          <span class="badge bg-warning text-dark mb-3">Business Model &amp; Web Platform</span>
-          <p class="text-secondary">Perancangan platform digital promosi dan reservasi destinasi pariwisata lokal kawasan Danau Toba dengan fitur paket wisata dan produk cinderamata UMKM.</p>
-        </div>
-        <div class="modal-footer border-top-0">
-          <button type="button" class="btn btn-secondary rounded-pill px-4" data-bs-dismiss="modal">Tutup</button>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Modal Proyek 4 -->
-  <div class="modal fade" id="modalProyek4" tabindex="-1" aria-labelledby="modalProyek4Label" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered">
-      <div class="modal-content rounded-4 border-0 shadow">
-        <div class="modal-header border-bottom-0 pb-0">
-          <h5 class="modal-title fw-bold text-info" id="modalProyek4Label">Student Permission Analysis</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-          <span class="badge bg-info text-dark mb-3">BPMN &amp; Root Cause Analysis · 2026</span>
-          <p class="text-secondary">Evaluasi mendalam mengenai alur perizinan cuti/keluar asrama mahasiswa dengan analisis efisiensi waktu siklus menggunakan standar notasi BPMN 2.0.</p>
-        </div>
-        <div class="modal-footer border-top-0">
-          <button type="button" class="btn btn-secondary rounded-pill px-4" data-bs-dismiss="modal">Tutup</button>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- 1. Bootstrap 5.3.3 JS Bundle -->
+  <!-- ================= 7. SCRIPTS ================= -->
+  <!-- Bootstrap 5.3.3 JS Bundle -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
-  <!-- 2. Skrip Validasi Form Interaktif -->
-  <script>
-    (() => {
-      'use strict'
-      const forms = document.querySelectorAll('.needs-validation')
-      Array.from(forms).forEach(form => {
-        form.addEventListener('submit', event => {
-          if (!form.checkValidity()) {
-            event.preventDefault()
-            event.stopPropagation()
-          }
-          form.classList.add('was-validated')
-        }, false)
-      })
-    })()
-  </script>
+  <!-- Data Access Layer (Fetch & API Service) -->
+  <script src="js/api-service.js"></script>
+
+  <!-- Presentation Layer (DOM Controller & Event Listeners) -->
+  <script src="js/app.js"></script>
 </body>
 </html>

@@ -1,0 +1,74 @@
+[
+  {
+    "id": "proj-1",
+    "title": "Sistem Izin Ruangan",
+    "category": "Requirements Engineering",
+    "year": "2025",
+    "icon": "bi-door-open",
+    "themeClass": "primary",
+    "thumbnail": "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=800&q=80",
+    "shortDescription": "Analisis kebutuhan sistem, pemodelan proses bisnis, dan perancangan diagram UML untuk otomasi perizinan ruangan kampus.",
+    "fullDescription": "Proyek ini berfokus pada perancangan kebutuhan sistem informasi peminjaman dan perizinan ruangan kampus agar proses birokrasi menjadi paperless, transparan, dan terstruktur.",
+    "deliverables": [
+      "Dokumen Software Requirements Specification (SRS)",
+      "Diagram UML: Use Case, Activity, Sequence, dan ERD",
+      "Kamus Data dan Matriks Ketertelusuran Kebutuhan (Traceability Matrix)"
+    ],
+    "tags": ["SRS", "UML", "Birokrasi Kampus", "Aksesibilitas"],
+    "metrics": "Efisiensi alur 65%"
+  },
+  {
+    "id": "proj-2",
+    "title": "Child Immunization App",
+    "category": "UI/UX Design",
+    "year": "2025",
+    "icon": "bi-heart-pulse",
+    "themeClass": "success",
+    "thumbnail": "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=800&q=80",
+    "shortDescription": "Perancangan purwarupa interaktif berbasis Figma dengan fokus pada aksesibilitas jadwal imunisasi anak secara terintegrasi.",
+    "fullDescription": "Aplikasi mobile ramah pengguna untuk membantu posyandu dan orang tua mencatat serta mengingat jadwal vaksinasi dan imunisasi balita secara tepat waktu dan inklusif.",
+    "deliverables": [
+      "Purwarupa Interaktif High-Fidelity Figma",
+      "Desain Sistem Desain UI memenuhi Rasio Kontras WCAG 2.2 AA",
+      "Laporan Usability Testing & User Journey Map"
+    ],
+    "tags": ["Figma", "WCAG 2.2", "Mobile Health", "User-Centered Design"],
+    "metrics": "Kontras rasio 4.8:1"
+  },
+  {
+    "id": "proj-3",
+    "title": "OurMemoria - Tourism Platform",
+    "category": "Business Plan",
+    "year": "2025",
+    "icon": "bi-geo-alt",
+    "themeClass": "warning",
+    "thumbnail": "https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?auto=format&fit=crop&w=800&q=80",
+    "shortDescription": "Platform digital pemesanan tiket wisata & suvenir lokal kawasan Danau Toba yang memberdayakan UMKM pariwisata.",
+    "fullDescription": "Perancangan platform digital promosi dan reservasi destinasi pariwisata lokal kawasan Danau Toba dengan fitur paket wisata kolaboratif dan integrasi katalog produk UMKM lokal.",
+    "deliverables": [
+      "Analisis Business Model Canvas (BMC) & Value Proposition",
+      "Skema Finansial & Proyeksi Pasar Pariwisata Toba",
+      "Wireframe Alur Transaksi Marketplace & Pemesanan"
+    ],
+    "tags": ["Danau Toba", "UMKM", "E-Tourism", "Business Model"],
+    "metrics": "Potensi 20+ Vendor"
+  },
+  {
+    "id": "proj-4",
+    "title": "Student Permission Analysis",
+    "category": "Process Analysis",
+    "year": "2026",
+    "icon": "bi-diagram-3",
+    "themeClass": "info",
+    "thumbnail": "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=800&q=80",
+    "shortDescription": "Analisis proses bisnis pengajuan izin mahasiswa melalui pemodelan alur BPMN (As-Is & To-Be) serta eliminasi bottleneck.",
+    "fullDescription": "Evaluasi mendalam mengenai alur perizinan cuti dan keluar asrama mahasiswa dengan analisis efisiensi waktu siklus menggunakan notasi standar BPMN 2.0.",
+    "deliverables": [
+      "Pemodelan Alur BPMN 2.0 (Kondisi As-Is vs To-Be)",
+      "Analisis Bottleneck dan Waktu Tunggu Verifikasi Asrama",
+      "Rekomendasi Kebijakan Digitalisasi Standar Operasional Prosedur (SOP)"
+    ],
+    "tags": ["BPMN 2.0", "As-Is / To-Be", "SOP Kampus", "Lead Time"],
+    "metrics": "Reduksi latensi alur 40%"
+  }
+]

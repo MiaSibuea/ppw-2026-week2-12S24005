@@ -1,0 +1,47 @@
+[
+  {
+    "id": "srv-1",
+    "title": "UI/UX & Accessibility Audit",
+    "icon": "bi-universal-access",
+    "price": "Rp 250.000",
+    "unit": "per modul aplikasi",
+    "badge": "Terpopuler",
+    "description": "Evaluasi antarmuka berdasarkan standar WCAG 2.2 AA, heuristik Nielsen, dan optimalisasi navigasi pengguna.",
+    "features": [
+      "Audit Kontras Warna & Navigasi Keyboard",
+      "Heuristic Evaluation Report (10 Prinsip)",
+      "Rekomendasi Wireframe Perbaikan UI",
+      "Sesi Konsultasi Online 1 Jam"
+    ]
+  },
+  {
+    "id": "srv-2",
+    "title": "Pemodelan Proses Bisnis & UML",
+    "icon": "bi-diagram-3-fill",
+    "price": "Rp 350.000",
+    "unit": "per kebutuhan sistem",
+    "badge": "Rekomendasi",
+    "description": "Perancangan spesifikasi sistem komprehensif mulai dari pemodelan alur bisnis BPMN hingga perancangan UML terintegrasi.",
+    "features": [
+      "Pemodelan BPMN 2.0 (As-Is & To-Be)",
+      "Diagram Use Case, Activity, & Sequence",
+      "Perancangan ERD & Kamus Data Relasional",
+      "Dokumentasi Spesifikasi Kebutuhan Ringkas"
+    ]
+  },
+  {
+    "id": "srv-3",
+    "title": "Frontend Prototyping & Code Review",
+    "icon": "bi-code-slash",
+    "price": "Rp 500.000",
+    "unit": "per proyek",
+    "badge": "Komprehensif",
+    "description": "Pembuatan prototipe antarmuka web responsif berbasis Bootstrap 5 / Modern CSS dan evaluasi struktur kode semantik.",
+    "features": [
+      "Implementasi Desain ke HTML5/CSS3/Bootstrap 5",
+      "Audit Keamanan Sisi Klien (DOM XSS Defense)",
+      "Pengecekan Responsivitas Mobile & Tablet",
+      "Kode Sumber Bersih & Terstruktur di GitHub"
+    ]
+  }
+]

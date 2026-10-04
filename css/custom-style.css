@@ -1,0 +1,301 @@
+/* ==========================================================================
+   1. CSS CUSTOM PROPERTIES (Palet Elegan Soft Pink & Rose - Mia Nathania Sibuea)
+   ========================================================================== */
+:root {
+  --primary-brand: #e05688;       /* Warna Utama: Rose Pink Elegan */
+  --primary-hover: #c93d70;       /* Hover: Deep Rose */
+  --primary-soft: #fce7f3;        /* Pink Pastel Lembut (Background/Tag) */
+  --primary-light: #fff0f5;       /* Pink Muda Sangat Lembut */
+  --accent-pink: #f472b6;         /* Aksen: Pastel Pink Cerah */
+  --surface-bg: #ffffff;          /* Putih Bersih untuk Kartu */
+  --body-bg: #fff5f8;             /* Background Halaman: Warm Soft Pinkish-White */
+  --text-main: #331d2c;           /* Teks Utama: Deep Warm Plum */
+  --text-muted: #7c586e;          /* Teks Sekunder: Muted Rose-Mauve */
+  --border-soft: #fbcfe8;         /* Garis Border Pink Lembut */
+  --card-radius: 18px;            /* Radius Kartu Modern */
+  --shadow-subtle: 0 6px 18px rgba(224, 86, 136, 0.07);
+  --shadow-lift: 0 16px 32px -6px rgba(224, 86, 136, 0.22);
+  --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ==========================================================================
+   2. DASAR HALAMAN
+   ========================================================================== */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--body-bg);
+  color: var(--text-main);
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  line-height: 1.65;
+}
+
+.page-container {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 2.5rem 1rem;
+}
+
+.section-card {
+  margin-bottom: 3.5rem;
+}
+
+.section-header {
+  margin-bottom: 2rem;
+  border-left: 5px solid var(--primary-brand);
+  padding-left: 1rem;
+}
+
+.section-title {
+  font-weight: 700;
+  color: var(--text-main);
+  margin-bottom: 0.25rem;
+}
+
+.section-desc {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+}
+
+/* ==========================================================================
+   3. CUSTOM OVERRIDES: NAVBAR & HERO SECTION
+   ========================================================================== */
+header nav.navbar.bg-dark {
+  background: linear-gradient(135deg, #381228 0%, #230a19 100%);
+  border-bottom: 1px solid rgba(244, 114, 182, 0.15);
+}
+
+.navbar .nav-link {
+  color: #e9d5ff;
+  font-weight: 500;
+  transition: var(--transition-smooth);
+}
+
+.navbar .nav-link:hover,
+.navbar .nav-link.active {
+  color: #ffffff;
+}
+
+#hero {
+  background: linear-gradient(180deg, #fff0f5 0%, #fdf2f8 60%, #fff5f8 100%);
+}
+
+#hero .text-primary,
+span.text-primary {
+  color: var(--primary-brand) !important;
+}
+
+.badge.bg-primary,
+.btn-primary {
+  background-color: var(--primary-brand) !important;
+  border-color: var(--primary-brand) !important;
+}
+
+.btn-primary:hover,
+.btn-primary:focus {
+  background-color: var(--primary-hover) !important;
+  border-color: var(--primary-hover) !important;
+}
+
+.btn-outline-primary {
+  color: var(--primary-brand) !important;
+  border-color: var(--primary-brand) !important;
+}
+
+.btn-outline-primary:hover,
+.btn-outline-primary.active {
+  background-color: var(--primary-brand) !important;
+  color: #ffffff !important;
+}
+
+.bg-primary-subtle {
+  background-color: var(--primary-soft) !important;
+  color: var(--primary-brand) !important;
+}
+
+.metric-card {
+  transition: var(--transition-smooth);
+  border: 1px solid var(--border-soft);
+}
+
+.metric-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-lift);
+}
+
+/* ==========================================================================
+   4. TENTANG SAYA & ACADEMIC TABLE
+   ========================================================================== */
+.about-layout {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+
+@media (min-width: 992px) {
+  .about-layout {
+    grid-template-columns: 1.2fr 1fr;
+  }
+}
+
+.profile-summary {
+  background: var(--surface-bg);
+  padding: 2rem;
+  border-radius: var(--card-radius);
+  box-shadow: var(--shadow-subtle);
+  border: 1px solid var(--border-soft);
+}
+
+.profile-summary h3 {
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: var(--text-main);
+}
+
+.profile-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 1.5rem;
+}
+
+.tag-pill {
+  background: var(--primary-soft);
+  color: var(--primary-brand);
+  font-size: 0.85rem;
+  font-weight: 600;
+  padding: 0.4rem 1rem;
+  border-radius: 50px;
+}
+
+.academic-sidebar {
+  background: var(--surface-bg);
+  padding: 2rem;
+  border-radius: var(--card-radius);
+  box-shadow: var(--shadow-subtle);
+  border: 1px solid var(--border-soft);
+}
+
+.academic-sidebar h3 {
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: var(--text-main);
+}
+
+.table-wrapper {
+  overflow-x: auto;
+}
+
+.academic-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.95rem;
+}
+
+.academic-table th,
+.academic-table td {
+  padding: 0.75rem 0.5rem;
+  border-bottom: 1px solid var(--border-soft);
+}
+
+.academic-table th {
+  color: var(--text-muted);
+  font-weight: 600;
+  text-align: left;
+}
+
+.academic-table td {
+  color: var(--text-main);
+  font-weight: 500;
+}
+
+/* ==========================================================================
+   5. PORTOFOLIO KARTU & FILTER MINGGU 4
+   ========================================================================== */
+.project-card {
+  transition: var(--transition-smooth);
+  border: 1px solid var(--border-soft) !important;
+}
+
+.project-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-lift) !important;
+}
+
+.filter-group {
+  background-color: var(--surface-bg);
+  border: 1px solid var(--border-soft) !important;
+}
+
+.service-card {
+  transition: var(--transition-smooth);
+  border: 1px solid var(--border-soft) !important;
+}
+
+.service-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-lift) !important;
+}
+
+/* ==========================================================================
+   6. LISTS GRID & FOOTER
+   ========================================================================== */
+.lists-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .lists-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.list-card {
+  background: var(--surface-bg);
+  padding: 2rem;
+  border-radius: var(--card-radius);
+  box-shadow: var(--shadow-subtle);
+  border: 1px solid var(--border-soft);
+}
+
+.styled-list {
+  padding-left: 1.25rem;
+  margin-bottom: 0;
+}
+
+.styled-list li {
+  margin-bottom: 0.5rem;
+}
+
+.site-footer {
+  background: linear-gradient(135deg, #381228 0%, #230a19 100%);
+  color: #e9d5ff;
+  padding: 3rem 1rem;
+  text-align: center;
+  border-top: 1px solid rgba(244, 114, 182, 0.2);
+}
+
+.footer-container {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.footer-nav a {
+  color: #f472b6;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.footer-nav a:hover {
+  text-decoration: underline;
+  color: #ffffff;
+}
+
+.nav-separator {
+  margin: 0 0.5rem;
+  color: #7c586e;
+}
